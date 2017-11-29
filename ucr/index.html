@@ -2739,7 +2739,7 @@ for the same resource (i.e. the same access/download target).</p>
 <h2>Profile</h2>
 
     <section class="requirement" id="RID1">
-    <h3>Profile definition [RPFD]</h3>
+    <h3>Profile definition [RPFDF]</h3>
     <p>Create a sufficiently wide definition of an application profile to address declaration of interoperability profiles data
       		may conform to, and through this mechanism provide the means for DCAT instances and collections to also declare the
 		 profiles of DCAT they conform to.</p>
@@ -2821,7 +2821,7 @@ for the same resource (i.e. the same access/download target).</p>
     </p>
   </section>
   <section class="requirement" id="RID4">
-    <h3>Profile information [RPFI]</h3>
+    <h3>Profile information [RPFIF]</h3>
     <p>Create a way to retrieve more information about a profile.
      This must be flexible enough to support human and machine readable resources,
      such as input and editing guidance, validation resources, usage notes etc.</p>
@@ -2840,7 +2840,7 @@ for the same resource (i.e. the same access/download target).</p>
 <h2>Versioning</h2>
 
   <section class="requirement" id="RVer1">
-    <h3>Version subject [RVS]</h3>
+    <h3>Version subject [RVSS]</h3>
     <p>Identify DCAT resources that are subject to versioning, i.e. Catalog, Dataset, Distribution.</p>
     <p class="relatedRequirements">
       <a href="#RID6"></a>
@@ -2853,7 +2853,7 @@ for the same resource (i.e. the same access/download target).</p>
   </section>
 
   <section class="requirement" id="RVer2"><!-- RID5 -->
-    <h3>Version definition [RVD]</h3>
+    <h3>Version definition [RVSDF]</h3>
     <p>Provide clear guidance on conditions, type and severity of a resource's update that might motivate the creation of a new version in scenarios such as dataset evolution, conversion, 
 	translations etc, including how this may assist change management processes for consumers (e.g. semantic versioning techniques)	   
 	</p>
@@ -2865,7 +2865,7 @@ for the same resource (i.e. the same access/download target).</p>
     </p>
   </section>
   <section class="requirement" id="RVer3"><!--RID6-->
-    <h3>Version identifier [RVID]</h3>
+    <h3>Version identifier [RVSID]</h3>
     <p>Provide a means to identify a version (URI-segment, property etc.). 	   
        Clarify relationship to identifier of the subject resource.
     </p>
@@ -2894,7 +2894,7 @@ for the same resource (i.e. the same access/download target).</p>
     </p>
   </section> -->
   <section class="requirement" id="RVer5">
-    <h3>Version release date [RVDT]</h3>
+    <h3>Version release date [RVSDT]</h3>
     <p>
      It must be possible to assign a date to a version. The version identifier might refer to the release date. 
     </p>
@@ -2907,7 +2907,7 @@ for the same resource (i.e. the same access/download target).</p>
     </p>
   </section>
   <section class="requirement" id="RVer6">
-    <h3>Version delta [RVDA]</h3>
+    <h3>Version delta [RVSDA]</h3>
     <p>
       Provide a way to indicate the change delta or other change information from the previous version.
     </p>
@@ -2942,7 +2942,7 @@ for the same resource (i.e. the same access/download target).</p>
  
   
  <section class="requirement" id="RID10">
-    <h3>Dataset types [RDST]</h3>
+    <h3>Dataset type [RDST]</h3>
     <p>Provide a mechanism to indicate the type of data being described and recommend vocabularies to use given the dataset type indicated. </p>
 		  <p class="note">Providing examples of scope will provide guidance, without being unnecessarily restrictive. 
 		      The key requirement is interoperability, achieved by using standardised vocabulary terms. It it unclear whether a canonical registry is required or whether communities should constrain choice via DCAT profiles.</p>
@@ -3029,7 +3029,7 @@ for the same resource (i.e. the same access/download target).</p>
   </section>
   
   <section class="requirement" id="RID13">
-    <h3>Distribution service metadata [RDISM]</h3>
+    <h3>Distribution service metadata [RDISMD]</h3>
     <p>Ability 1) to describe the type of distribution and 2) provide information about the type of service</p>
 	<p class="note">Such a description may be provided through a suitable profile identifier that defines a profile of the relevant service type.</p>
 	<p class="relatedRequirements">
@@ -3080,7 +3080,7 @@ for the same resource (i.e. the same access/download target).</p>
   </section>
   
   <section class="requirement" id="RID16">
-    <h3>Provenance information [RPI]</h3>
+    <h3>Provenance information [RPIF]</h3>
     <p>Provide a way to link to structured information about the provenance of a dataset including:
 	 <ul>
 	 <li>the input data used to create a dataset to the dataset.</li>
@@ -3141,7 +3141,7 @@ for the same resource (i.e. the same access/download target).</p>
   </section>
   
    <section class="requirement" id="RID45.1">
-    <h3>Quality-related information [RDQI]</h3>
+    <h3>Quality-related information [RDQIF]</h3>
     <p>Define a way to associate quality-related information with Datasets.</p>
    <!--Define a means to advertise any quality-related information; this might be text-based or more machine-processable.-->
     <p class="relatedUseCases">
@@ -3205,7 +3205,7 @@ Aspects of identification and control over copies.
   </section>
 
    <section class="requirement" id="RID25.2">
-    <h3>Publication source [RID25.2]</h3>
+    <h3>Publication source [RPS]</h3>
     <p>Provide a way to cite the original metadata with a dereferenceable identifier.
 	</p>
     <p class="relatedUseCases">
@@ -3213,6 +3213,17 @@ Aspects of identification and control over copies.
     </p>
     <p class="relatedRequirements">
       <a href="#RID25.1"></a>	
+	</p> 
+  </section>
+
+  <section class="requirement" id="RID25.1">
+    <h3>Publication control [RPC]</h3>
+    <p>Provide means to express rights relating to reuse of DCAT metadata</p>
+    <p class="relatedUseCases">
+      <a href="#ID25"></a>
+    </p>
+    <p class="relatedRequirements">
+      <a href="#RID25.2"></a>	
 	</p> 
   </section>
 
@@ -3225,16 +3236,6 @@ Aspects of identification and control over copies.
     </p>
   </section>
   
-  <section class="requirement" id="RID25.1">
-    <h3>Publication control [RPC]</h3>
-    <p>Provide means to express rights relating to reuse of DCAT metadata</p>
-    <p class="relatedUseCases">
-      <a href="#ID25"></a>
-    </p>
-    <p class="relatedRequirements">
-      <a href="#RID25.2"></a>	
-	</p> 
-  </section>
 
 </section>
 
