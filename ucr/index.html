@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
 	Processing notes:
-	- ensure the document is well-formed (XHTML), test e.g. "xmllint index.html" 
+	- ensure the document is well-formed (XHTML), test e.g. "xmllint index.html"
 	- preserve document comments (hints, markers and excluded sections)
 	- expand empty tags (<a/>) otherwise the rendering breaks
 	- "relatedRequirements" sections of use cases are auto-populated by references within the "relatedUseCases" sections of requirements, ensure these are present and empty
@@ -19,15 +19,42 @@
     <title>Dataset Exchange Use Cases and Requirements</title>
     <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
     <meta content="width=device-width,initial-scale=1" name="viewport"/>
-    <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-WG-NOTE"/>   
-    <link rel="stylesheet" type="text/css" href="dxwg.css"/>    
+    <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-WG-NOTE"/>
+    <link rel="stylesheet" type="text/css" href="dxwg.css"/>
   </head>
-  <body class="h-entry" role="document" id="respecDocument" onload="init()">	  
+  
+  <body class="h-entry" role="document" id="respecDocument" onload="init()">
+
+	<section id="contributors">
+	<b>Contributors</b> (section to be updated &amp; moved)
+	<ul>
+		<li>Alejandra Gonzalez-Beltran, Oxford e-Research Centre</li>
+		<li>Andrea Perego, European Commission, Joint Research Centre</li>
+		<li>Antoine Isaac, Vrije Universiteit</li>
+		<li>Christian Mader, Fraunhofer Gesellschaft</li>
+		<li>Jaroslav Pullmann, Fraunhofer Gesellschaft</li>
+		<li>Jonathan Yu, CSIRO</li>
+		<li>Karen Coyle, Dublin Core Metadata Initiative</li>
+		<li>Keith Jeffery</li>
+		<li>Lieven Raes, Informatie Vlaanderen</li>
+		<li>Makx Dekkers</li>
+		<li>Peter Brenton</li>
+		<li>Peter Winstanley</li>
+		<li>Riccardo Albertoni, CNR-ISTI</li>
+		<li>Rob Atkinson, OGC</li>
+		<li>Ruben Verborgh, IMEC vzw</li>
+		<li>Simon Cox, CSIRO</li>
+		<li>Stephen Richard, Columbia University</li>
+		<li>Thomas D'haenens, Informatie Vlaanderen</li>
+		<li>Valentine Charles, Europeana</li>
+	</ul>
+	</section>
+	  
     <section id="abstract">
       <p>
 		This document lists use cases iteratively compiled by the <a href="https://www.w3.org/2017/dxwg/wiki/Main_Page">Dataset Exchange Working Group</a>.
 		They identify current shortcomings and motivate the extension of the <a href="https://www.w3.org/TR/vocab-dcat/">Data Catalog Vocabulary (DCAT)</a>
-		along with definition of guidance in application of this vocabulary and derived DCAT profiles. 
+		along with definition of guidance in application of this vocabulary and derived DCAT profiles.
 	 </p>
     </section>
     <section id="sotd">
@@ -36,21 +63,21 @@
     <section id="Introduction">
       <h1>Introduction</h1>
       <p>
-		The mission of the <a href="https://www.w3.org/2017/dxwg/wiki/Main_Page">Dataset Exchange Working Group</a> as described it its 
+		The mission of the <a href="https://www.w3.org/2017/dxwg/wiki/Main_Page">Dataset Exchange Working Group</a> as described it its
 		<a href="https://www.w3.org/2017/dxwg/charter">charter</a> is to:</p><ul>
 		<li>Revise the Data Catalog Vocabulary, DCAT, taking account of related vocabularies and the extensive work done in developing a number of its application profiles.</li>
-		<li>Define and publish guidance on the use of application profiles when requesting and serving data on the Web.</li></ul> 
-		<p> This document represents the results of the Working Group's initial efforts to identify requirements for these activities. It contains Use Cases reflecting situations that members of the Working Group and other stakeholders have identifed relevant to these goals, and a minimal set of requirements derived from 
-		    the use cases. The use cases and requirements will be used to develop the three key deliverables described below. 
+		<li>Define and publish guidance on the use of application profiles when requesting and serving data on the Web.</li></ul>
+		<p> This document represents the results of the Working Group's initial efforts to identify requirements for these activities. It contains Use Cases reflecting situations that members of the Working Group and other stakeholders have identifed relevant to these goals, and a minimal set of requirements derived from
+		    the use cases. The use cases and requirements will be used to develop the three key deliverables described below.
       </p>
     </section>
     <section id="Deliverables">
       <h1>Deliverables</h1>
       <p>
-		The deliverables for this Working Group as described in the <a href="https://www.w3.org/2017/dxwg/charter">charter</a> are noted below.    
+		The deliverables for this Working Group as described in the <a href="https://www.w3.org/2017/dxwg/charter">charter</a> are noted below.
 		<section id="DCAT">
 			<h3>DCAT 1.1</h3>
-		<p>An update and expansion of the <a href="https://www.w3.org/TR/2014/REC-vocab-dcat-20140116/">current DCAT Recommendation</a>. The new version may deprecate, 
+		<p>An update and expansion of the <a href="https://www.w3.org/TR/2014/REC-vocab-dcat-20140116/">current DCAT Recommendation</a>. The new version may deprecate,
 		   but <span class="rfc21192">MUST NOT</span> delete, any existing terms.</p>
 		</section>
 		<section id="Guidance">
@@ -59,7 +86,7 @@
 		</section>
 		<section id="Conneg">
 			<h3>Content Negotiation by Application Profile</h3>
-		<p>An explanation of how to implement the <a href="http://profilenegotiation.github.io/I-D-Accept--Schema/I-D-accept-schema">expected RFC</a> and suitable fallback 
+		<p>An explanation of how to implement the <a href="http://profilenegotiation.github.io/I-D-Accept--Schema/I-D-accept-schema">expected RFC</a> and suitable fallback
 		   mechanisms as <a href="https://www.w3.org/2016/11/sdsvoc/report#conneg">discussed at the SDSVoc workshop</a>.</p>
 		</section>
       </p>
@@ -69,34 +96,34 @@
       <h1>Methodology</h1>
       <p>
 
-		This Working Group was formed as an outcome of the Smart Descriptions &amp; Smarter Vocabularies (SDSVoc) workshop held in Amsterdam November 30-December 1, 2016. The first  
-		Working Group meeting was held May 18, 2017.  At that meeting the Working Group Chairs called for Working Group members and other stakeholders to submit use cases 
-		on the <a href="https://www.w3.org/2017/dxwg/wiki/Use_Case_Working_Space">Working Group's wiki</a>. 
+		This Working Group was formed as an outcome of the Smart Descriptions &amp; Smarter Vocabularies (SDSVoc) workshop held in Amsterdam November 30-December 1, 2016. The first
+		Working Group meeting was held May 18, 2017.  At that meeting the Working Group Chairs called for Working Group members and other stakeholders to submit use cases
+		on the <a href="https://www.w3.org/2017/dxwg/wiki/Use_Case_Working_Space">Working Group's wiki</a>.
 		</p>
-		<p>Use cases were written using a template, which required use case authors to provide a problem statement, list of stakeholders experiencing the problem, and 
-		   requirements suggested given the problem. It was also recommended that use case authors provide references to existing approaches that might be useful for DCAT, 
-		   links to documents and projects their use cases referenced, related use cases, and editorial comments. In addition, the list of tags below was created and applied to the 
-		   use cases to reorganize them on demand.</p> 
+		<p>Use cases were written using a template, which required use case authors to provide a problem statement, list of stakeholders experiencing the problem, and
+		   requirements suggested given the problem. It was also recommended that use case authors provide references to existing approaches that might be useful for DCAT,
+		   links to documents and projects their use cases referenced, related use cases, and editorial comments. In addition, the list of tags below was created and applied to the
+		   use cases to reorganize them on demand.</p>
 		<p>Working Group Chairs, grouped related use cases for discussion. Use cases were discussed during the <a href="https://www.w3.org/2017/dxwg/wiki/Meetings">Working Group's weekly meetings</a>
-		   and an intensive two day <a href="https://www.w3.org/2017/dxwg/wiki/Oxford_Attendance_and_logistics">face-to-face meeting</a> held at the Oxford e-Research 
-		   Centre, University of Oxford, July 17-18, 2017. After the discussion of each use case, a proposal to accept the use case as-is, accept the use case with changes, 
-		   or reject the use case was put before Working Group members in attendance for a vote. During voting Working Group Chairs sought consensus as outlined in 
-		   <a href="https://www.w3.org/2017/Process-20170301/#Consensus">Section 3.3 of the W3C Process Document</a>. 
+		   and an intensive two day <a href="https://www.w3.org/2017/dxwg/wiki/Oxford_Attendance_and_logistics">face-to-face meeting</a> held at the Oxford e-Research
+		   Centre, University of Oxford, July 17-18, 2017. After the discussion of each use case, a proposal to accept the use case as-is, accept the use case with changes,
+		   or reject the use case was put before Working Group members in attendance for a vote. During voting Working Group Chairs sought consensus as outlined in
+		   <a href="https://www.w3.org/2017/Process-20170301/#Consensus">Section 3.3 of the W3C Process Document</a>.
 		   </p>
-		<p>The requirements were derived from the accepted use cases. One of the key tasks for the editors of this document was removing duplicate requirements, 
-		   editing those that remained and adding missing ones. The editors also ensured links from requirements to use cases were maintained.</p> 
+		<p>The requirements were derived from the accepted use cases. One of the key tasks for the editors of this document was removing duplicate requirements,
+		   editing those that remained and adding missing ones. The editors also ensured links from requirements to use cases were maintained.</p>
 
     </section>
-    
+
      <section id="Tags">
       <h1>Tags</h1>
       <p>
-		A tag set has been defined to label the use cases and to interactively rebuild 
-		the document according to tag filter selected. Please choose one or more tags 
-		and click "apply filter". "Reset filter" will clear the selection and recreate 
+		A tag set has been defined to label the use cases and to interactively rebuild
+		the document according to tag filter selected. Please choose one or more tags
+		and click "apply filter". "Reset filter" will clear the selection and recreate
 		the original specification view .
       </p>
-    
+
 
       <p>
       	<!--
@@ -105,13 +132,13 @@
       		<button class="dxwgButton resetFilterButton" onclick="resetFilter()" aria-label="reset filter">reset filter</button>
       	</div>
 		-->
-	
+
 		<div id="deliverableFilter" class="filterGroup">
 			Filter by deliverable&#160;
 			<div class="filter"><label class="switch deliverable_reference" title="HTTP Content negotiation by media type and profile. Deliverable 'Content Negotiation by Application Profile'"><input type="checkbox" name="tag_filter" value="content_negotiation" hidden="true" onchange="toggle(this)"></input>content_negotiation</label></div>
 			<div class="filter"><label class="switch deliverable_reference" title="DCAT core and deliverable 'DCAT 1.1'"><input type="checkbox" name="tag_filter" value="dcat" hidden="true" onchange="toggle(this)"></input>dcat</label></div>
-			<div class="filter"><label class="switch deliverable_reference" title="Structural and/or semantic constraints of target resource. Deliverable 'Guidance on publishing application profiles of vocabularies'"><input type="checkbox" name="tag_filter" value="profile" hidden="true" onchange="toggle(this)"></input>profile</label></div>			
-		</div>	
+			<div class="filter"><label class="switch deliverable_reference" title="Structural and/or semantic constraints of target resource. Deliverable 'Guidance on publishing application profiles of vocabularies'"><input type="checkbox" name="tag_filter" value="profile" hidden="true" onchange="toggle(this)"></input>profile</label></div>
+		</div>
 		<div id="resourceFilter" class="filterGroup">
 			Filter by resource type&#160;
 			<div class="filter"><label class="switch" title="DCAT Catalog"><input type="checkbox" name="tag_filter" value="catalog" hidden="true" onchange="toggle(this)"></input>catalog</label></div>
@@ -136,14 +163,14 @@
 			<div class="filter"><label class="switch" title="Lifecycle status of a DCAT resource"><input type="checkbox" name="tag_filter" value="status" hidden="true" onchange="toggle(this)"></input>status</label></div>
 			<div class="filter"><label class="switch" title="Modeling of temporal aspects"><input type="checkbox" name="tag_filter" value="time" hidden="true" onchange="toggle(this)"></input>time</label></div>
 			<div class="filter"><label class="switch" title="Access control and usage permissions (extending access control)"><input type="checkbox" name="tag_filter" value="usage_control" hidden="true" onchange="toggle(this)"></input>usage_control</label></div>
-			<div class="filter"><label class="switch" title="Versioning aspects of a DCAT resource"><input type="checkbox" name="tag_filter" value="version" hidden="true" onchange="toggle(this)"></input>version</label></div>			
+			<div class="filter"><label class="switch" title="Versioning aspects of a DCAT resource"><input type="checkbox" name="tag_filter" value="version" hidden="true" onchange="toggle(this)"></input>version</label></div>
 		</div>
 		<div id="metaFilter" class="filterGroup">
 			Filter by meta-modeling aspect&#160;
 			<div class="filter"><label class="switch" title="Aggregate of individual use cases. Requires rework and splitting up."><input type="checkbox" name="tag_filter" value="aggregate" hidden="true" onchange="toggle(this)"></input>aggregate</label></div>
 			<div class="filter"><label class="switch" title="Meta use-case or requirement, details are handled by subordinated use-case or requirement"><input type="checkbox" name="tag_filter" value="meta" hidden="true" onchange="toggle(this)"></input>meta</label></div>
 			<div class="filter"><label class="switch" title="Usecase that is currently out of groups's scope"><input type="checkbox" name="tag_filter" value="out_of_scope" hidden="true" onchange="toggle(this)"></input>out_of_scope</label></div>
-		</div>			
+		</div>
 		<!--
 		<table cellpadding="4">
 		<tbody>
@@ -184,7 +211,7 @@
 		</td></tr>
 		<tr>
 		<td><label class="switch"><input type="checkbox" name="tag_filter" value="out_of_scope" hidden="true" onchange="toggle(this)"></input>out_of_scope</label></td>
-		<td> Usecase that is currently out of groups's scope 
+		<td> Usecase that is currently out of groups's scope
 		</td></tr>
 		<tr>
 		<td><label class="switch"><input type="checkbox" name="tag_filter" value="packaging" hidden="true" onchange="toggle(this)"></input>packaging</label></td>
@@ -245,11 +272,11 @@
 	-->
 	  </p>
 
-	  <div class="filterControl">      		
+	  <div class="filterControl">
 	  		<span><input type="checkbox" name="render_option" value="req_first" id="req_first"></input><label>Requirements first</label></span>&#160;
 	  		<span><input type="checkbox" name="render_option" value="uc_collapsed" id="uc_collapsed"></input><label>UCs collapsed</label></span>&#160;
       		<button class="dxwgButton applyFilterButton" onclick="applyFilter()" aria-label="apply filter">apply filter</button>&#160;
-      		<button class="dxwgButton resetFilterButton" onclick="resetFilter()" aria-label="reset filter">reset filter</button>      	
+      		<button class="dxwgButton resetFilterButton" onclick="resetFilter()" aria-label="reset filter">reset filter</button>
       </div>
     </section>
 
@@ -258,19 +285,19 @@
 
 	   <section id="ID1" class="usecase">
           <h2>DCAT packaged distributions [ID1]</h2>
-		  <p class="contributor">Makx Dekkers</p>          
+		  <p class="contributor">Makx Dekkers</p>
           <p class="tags"><span class="tag class_dcat">dcat</span> <span class="tag class_distribution">distribution</span> <span class="tag class_documentation">documentation</span> <span class="tag class_packaging">packaging</span> <span class="tag class_representation">representation</span></p>
           <p class="stakeholders">Data publisher</p>
           <div class="expandOrCollapse" onclick="toggleVisibility(this)">&#x25B6; Full use case description (click to collapse):</div>
           <div class="visible">
-            <p class="description">				
+            <p class="description">
 				In practice, distributions are sometimes made available in a packaged or compressed format.
 				For example, a group of files may be packaged in a ZIP file, or a single large file may be compressed.
 				The current specification of DCAT allows the package format to be expressed in dct:format or dcat:mediaType
 				but it is currently not possible to specify what types of files are contained in the package.</p>
             <p class="existing_approaches">
 				An example of an approach is the way ADMS defines Representation Technique which could be used to describe
-				the type of data in a ZIP file, e.g. dcat:mediaType="<a rel="nofollow" class="external free" href="https://www.iana.org/assignments/media-types/application/zip">https://www.iana.org/assignments/media-types/application/zip</a>"; adms:representationTechnique="<a rel="nofollow" class="external free" href="https://www.iana.org/assignments/media-types/text/csv">https://www.iana.org/assignments/media-types/text/csv</a>". 
+				the type of data in a ZIP file, e.g. dcat:mediaType="<a rel="nofollow" class="external free" href="https://www.iana.org/assignments/media-types/application/zip">https://www.iana.org/assignments/media-types/application/zip</a>"; adms:representationTechnique="<a rel="nofollow" class="external free" href="https://www.iana.org/assignments/media-types/text/csv">https://www.iana.org/assignments/media-types/text/csv</a>".
             </p>
             <p class="links">
 			 <ul>
@@ -282,7 +309,7 @@
 				</li>
 			  </ul>
             </p>
-          </div>          
+          </div>
           <p class="relatedRequirements">
 			  <!--<a href="#RID1.1"> </a>-->
 		  </p>
@@ -424,7 +451,7 @@
         <li>
           <a rel="nofollow" class="external free" href="https://arxiv.org/pdf/1609.07108v1.pdf">https://arxiv.org/pdf/1609.07108v1.pdf</a>
         </li>
-        
+
       </ul>
         </p>
       </div>
@@ -462,17 +489,17 @@
       <div class="visible">
         <p class="description">
          <p>
-          Most datasets that are maintained long-term and evolve over time have distributions of multiple versions. 
-          However, the current DCAT model does not cover versioning with sufficient details. Being able to publish 
-          dataset version information in a standard way will help both producers publishing their data on data catalogues 
-      	  or archiving data and dataset consumers who want discover new versions of a given dataset, etc. 
+          Most datasets that are maintained long-term and evolve over time have distributions of multiple versions.
+          However, the current DCAT model does not cover versioning with sufficient details. Being able to publish
+          dataset version information in a standard way will help both producers publishing their data on data catalogues
+      	  or archiving data and dataset consumers who want discover new versions of a given dataset, etc.
       	 </p>
       	 <p>
-      	  We can also see some similarities with software versioning and dataset versioning, for instance, some data projects 
-      	  release daily dataset distributions, major/minor releases etc. Probably, we can use some of the lessons learned from 
+      	  We can also see some similarities with software versioning and dataset versioning, for instance, some data projects
+      	  release daily dataset distributions, major/minor releases etc. Probably, we can use some of the lessons learned from
       	  software versioning. There are several existing dataset description models that extend DCAT to provide versioning information,
       	  for example, HCLS Community Profile.
-         </p>         
+         </p>
         </p>
         <p class="links">
           <ul>
@@ -539,7 +566,7 @@
           <p>Thus there is a need for discovering which profiles a service will offer for a given resource, and a canonical machine readable graph of metadata about what such offerings consist of and how they may be invoked. This may be as simple as providing a profile name, or content profile, schema choice, encoding and languages.</p>
           <p>Note that the Linked Data API implementation used by the UK Linked Data effort, includes the notion of _view parameters in URI requests - these are "named collections of properties" but it does not provide a means to attach metadata about what such views consist of. equivalent HTTP header based profile negotiation would still need to address this requirement in the same way as agent-driven negotiation (<a rel="nofollow" class="external free" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html">https://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html</a>) - what is required is a minimal set of metadata and extension mechanisms for this.</p>
           <p>Support for a specific profile is also a powerful search axis, potentially encompassing the full suite of semantic specification and resource interoperability requirements. Thus metadata about profile support can be used for  both discovery and mediated traversal via forms of content negotiation.</p>
-        </p>        
+        </p>
         <p class="links">
           <ul>
         <li>
@@ -548,7 +575,7 @@
         <li> Example at <a rel="nofollow" class="external free" href="http://environment.data.gov.au/water/id/riverregion/9400299?_view=alternates&amp;_format=html">http://environment.data.gov.au/water/id/riverregion/9400299?_view=alternates&amp;_format=html</a></li>
       </ul>
           <p>
-        
+
       </p>
         </p>
       </div>
@@ -560,7 +587,7 @@
         <a href="#ID20"></a>
         <a href="#ID2"></a>
         <a href="#ID7"></a>
-        <a href="#ID26"></a>     
+        <a href="#ID26"></a>
         <a href="#ID28"></a>
         <a href="#ID30"></a>
       </p>
@@ -592,11 +619,11 @@
           <ul>
         <li> Existing CKAN catalogues such as data.gov.au use a DCAT plugin to represent the dataset entry, which lacks consistent/precise ability to associate a dataset description with a distribution and its appropriate web service implementation/interface. See <a rel="nofollow" class="external free" href="http://data.gov.au/dataset/2016-soe-lan-soil-classification">http://data.gov.au/dataset/2016-soe-lan-soil-classification</a> for an example as well as <a rel="nofollow" class="external free" href="http://data.gov.au/dataset/116eb634-fc0b-42d8-ae27-b876a12c4f6a.rdf">http://data.gov.au/dataset/116eb634-fc0b-42d8-ae27-b876a12c4f6a.rdf</a> (which overloads the use of dct:format for describing the web service interface for some of the dcat:Distribution descriptions).</li>
         <li> The following is some work done proposing a lightweight method for describing web services and interfaces in RDF/OWL. These can then be specialisations or associations of dcat:Distribution and allow users, catalog implementations to standardise on how different endpoints are used.
-	
+
 		  <p>
 			<a rel="nofollow" class="external free" href="https://github.com/CSIRO-LW-LD/dpn-ontology/wiki/Design:-DPN-module-for-services">https://github.com/CSIRO-LW-LD/dpn-ontology/wiki/Design:-DPN-module-for-services</a>
 		</p>
-        
+
         </li>
       </ul>
         </p>
@@ -622,7 +649,7 @@
       <div class="expandOrCollapse" onclick="toggleVisibility(this)">&#x25B6; Full use case description (click to collapse):</div>
       <div class="visible">
         <p class="description">
-          <p>We want to be able to describe a dataset record using properties appropriate to the dataset type. This is especially the case in a dataset in the geoscience domain, e.g. an observation of a "feature" in the real world captured using a sensor about some property. There are emerging practices on how to represent these semantics for the data, however, DCAT currently only supports association of a dcat:Dataset with dcat:theme to a skos:Concept. Data providers could extend/specialise dcat:theme to provide specific semantics about the association between dcat:Dataset and the &#x2018;theme&#x2019; but is this enough? Furthermore, there are broad/aggregated semantics at the dataset level (e.g. observations in the Great Barrier Reef) and then fine grained semantics for elements within a dataset (e.g. sea surface temperature observations in the Great Barrier Reef). 
+          <p>We want to be able to describe a dataset record using properties appropriate to the dataset type. This is especially the case in a dataset in the geoscience domain, e.g. an observation of a "feature" in the real world captured using a sensor about some property. There are emerging practices on how to represent these semantics for the data, however, DCAT currently only supports association of a dcat:Dataset with dcat:theme to a skos:Concept. Data providers could extend/specialise dcat:theme to provide specific semantics about the association between dcat:Dataset and the &#x2018;theme&#x2019; but is this enough? Furthermore, there are broad/aggregated semantics at the dataset level (e.g. observations in the Great Barrier Reef) and then fine grained semantics for elements within a dataset (e.g. sea surface temperature observations in the Great Barrier Reef).
 Users need a way to view the aggregated collection level metadata and the associated semantics and then they need a way to view record level metadata to obtain/filter on specific information, e.g. instrument/sensor used, spatial feature, observable property, quantity kind, etc. </p>
           <p>Properties from the W3C Semantic Sensor Network SOSA ontology and QUDT may be useful in this context.  </p>
         </p>
@@ -672,7 +699,7 @@ Users need a way to view the aggregated collection level metadata and the associ
       <div class="visible">
         <p class="description">
           <p>Some users of DCAT may want to apply it to resources that not everyone would consider a 'dataset'. Some examples are text documents, source code, controlled vocabularies, and ontologies. It's not clear what kinds of resources may be described with DCAT or how one would describe the types listed. Users need guidance about the expected scope for DCAT and on the use of whatever terms DCAT chooses to use or recommend for assigning types (e.g., dc:type). There also needs to be a way for a DCAT description to indicate the 'type' of dataset involved (the semantic type, not the media-type).</p>
-        
+
         <p class="links">
           <ul>
         <li> DCMI Type vocabulary - <a rel="nofollow" class="external free" href="http://dublincore.org/documents/dcmi-type-vocabulary/#H7">http://dublincore.org/documents/dcmi-type-vocabulary/#H7</a> </li>
@@ -919,7 +946,7 @@ Users need a way to view the aggregated collection level metadata and the associ
           <p>[[DCTerms]] defines a limited number of agent roles as properties. [[VOCAB-DCAT]] re-uses some of them (in particular, <code>dcterms:publisher</code>), plus it defines a new one, namely, <code>dcat:contactPoint</code>. [[DCAT-AP]] and [[GeoDCAT-AP]] provide guidance on the use of other [[DCTerms]] roles - in particular, <code>dcterms:creator</code>, <code>dcterms:rightsHolder</code>. Anyway, the role properties defined in [[DCTerms]] and [[VOCAB-DCAT]] model just a subset of the agent roles defined in other standards. Moreover, they cannot be used to associate a role with other information concerning its temporal / organizational context.</p>
           <p>[[PROV-O]] could be used for this purpose by using a &#x201C;qualified attribution&#x201D;. This is, for instance, the approach used in [[GeoDCAT-AP]] to model agent roles defined in [[ISO-19115-1]] but not supported in [[DCTerms]] and [[VOCAB-DCAT]]:</p>
           <pre>
-a:Dataset a dcat:Dataset; 
+a:Dataset a dcat:Dataset;
   prov:qualifiedAttribution [ a prov:Attribution&#xA0;;
 # The agent role, as per ISO 19115
     dcterms:type &lt;http://inspire.ec.europa.eu/metadata-codelist/ResponsiblePartyRole/owner&gt;&#xA0;;
@@ -1109,8 +1136,8 @@ a:ConformanceTest a prov:Plan&#xA0;;
   prov:wasDerivedFrom &lt;http://data.europa.eu/eli/reg/2014/1312/oj&gt; .
 # Reference standard / specification
 &lt;http://data.europa.eu/eli/reg/2014/1312/oj&gt; a prov:Entity, dct:Standard&#xA0;;
-  dcterms:title "Commission Regulation (EU) No 1089/2010 of 23 November 2010 implementing 
-                 Directive 2007/2/EC of the European Parliament and of the Council as regards 
+  dcterms:title "Commission Regulation (EU) No 1089/2010 of 23 November 2010 implementing
+                 Directive 2007/2/EC of the European Parliament and of the Council as regards
                  interoperability of spatial data sets and services"@en
   dcterms:issued "2010-11-23"^^xsd:date .</pre>
           <p>The example states that the reference dataset is conformant with the <i>Commission Regulation (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services</i>. Since this case corresponds to the scenario supported in [[VOCAB-DQV]], the [[PROV-O]]-based representation above is equivalent to:</p>
@@ -1119,8 +1146,8 @@ a:Dataset a dcat:Dataset&#xA0;;
   dcterms:conformsTo &lt;http://data.europa.eu/eli/reg/2014/1312/oj&gt; .
 # Reference standard / specification
 &lt;http://data.europa.eu/eli/reg/2014/1312/oj&gt; a prov:Entity, dct:Standard&#xA0;;
-  dcterms:title "Commission Regulation (EU) No 1089/2010 of 23 November 2010 implementing 
-                 Directive 2007/2/EC of the European Parliament and of the Council as regards 
+  dcterms:title "Commission Regulation (EU) No 1089/2010 of 23 November 2010 implementing
+                 Directive 2007/2/EC of the European Parliament and of the Council as regards
                  interoperability of spatial data sets and services"@en
   dcterms:issued "2010-11-23"^^xsd:date .</pre>
         </p>
@@ -1243,7 +1270,7 @@ a:Dataset a dcat:Dataset&#xA0;;
       </ul>
           <p>An example is provided by the following code snippet. Here, the distribution's access URL points to service, implemented by using the [[WMS]] standard of the Open Geospatial Consortium (OGC):</p>
           <pre>
-a:Dataset a dcat:Dataset; 
+a:Dataset a dcat:Dataset;
   dcat:distribution [ a dcat:Distribution&#xA0;;
     dct:title "GMIS - WMS (9km)"@en&#xA0;;
     dct:description "Web Map Service (WMS) - GetCapabilities"@en&#xA0;;
@@ -1399,7 +1426,7 @@ a:Dataset a dcat:Dataset;
 			The metadata must provide sufficient information about the distributions for the catalog client to filter for only services
 			that offer such a distribution in the results offered to the user.
           </p>
-        </p>   
+        </p>
         <p class="links">
           <ul>
         <li> See <a rel="nofollow" class="external free" href="http://usgin.github.io/usginspecs/ContentModelForLinks.htm">http://usgin.github.io/usginspecs/ContentModelForLinks.htm</a>; white paper discussing the kinds of metadata that need to be associated with links to make them machine actionable (needs some updating)</li>
@@ -1408,7 +1435,7 @@ a:Dataset a dcat:Dataset;
         </p>
       </div>
       <p class="relatedUseCases">
-		  <a href="#ID22"></a>  
+		  <a href="#ID22"></a>
       </p>
       <p class="relatedRequirements">
 	  <!--
@@ -1423,7 +1450,7 @@ a:Dataset a dcat:Dataset;
         <span class="tag class_dcat">dcat</span>
         <span class="tag class_distribution">distribution</span>
       </p>
-      
+
       <div class="expandOrCollapse" onclick="toggleVisibility(this)">&#x25B6; Full use case description (click to collapse):</div>
       <div class="visible">
         <p class="description">
@@ -1433,7 +1460,7 @@ a:Dataset a dcat:Dataset;
 			domains for the parameters. This could be via a link to an open search or URI template description type document,
 			or by metadata elements associated with the link that define the parmeters and their domains.
 		 </p>
-        </p>    
+        </p>
         <p class="links">
          <ul>
 			<li> See <a rel="nofollow" class="external free" href="http://usgin.github.io/usginspecs/ContentModelForLinks.htm">http://usgin.github.io/usginspecs/ContentModelForLinks.htm</a>; white paper discussing the kinds of metadata that need to be associated with links to make them machine actionable (needs some updating)</li>
@@ -1441,7 +1468,7 @@ a:Dataset a dcat:Dataset;
         </p>
       </div>
       <p class="relatedUseCases">
-        <a href="#ID21"></a>        
+        <a href="#ID21"></a>
       </p>
       <p class="relatedRequirements">
 	  <!--
@@ -1490,7 +1517,7 @@ Some of the DQV wishes might be included either as Use Cases or as group issues.
       -->
       </p>
     </section>
-   
+
     <section id="ID24" class="usecase">
       <h2>Harmonising INSPIRE-obligations and DCAT-distribution [ID24]</h2>
       <p class="contributor">Thomas D'haenens, Informatie Vlaanderen</p>
@@ -1508,7 +1535,7 @@ Some of the DQV wishes might be included either as Use Cases or as group issues.
 				(going from environment to transport to ...), following the INSPIRE guidelines.
 				These are for a major part in the spirit of georeferenceable datasets and are based on ISO-standards
 				and go much more in detail than DCAT does.
-				
+
 				On the other side we also have an open data policy and implementations based on DCAT
 				(much leaner metadata vocabulary).
 			</p>
@@ -1518,12 +1545,12 @@ Some of the DQV wishes might be included either as Use Cases or as group issues.
 				ought to be done on a supranational level. At the least, I believe guidelines and mapping rules
 				should be defined within both DCAT(-AP) and INSPIRE to enhance interoperability.
 				Starting point should be that a dataset must be described only once (off course)
-			</p>      
+			</p>
         </p>
         <p class="links">
           INSPIRE-based metadata catalog, see <a rel="nofollow" class="external free" href="https://metadata.geopunt.be/zoekdienst/apps/tabsearch/index.html?hl=dut">https://metadata.geopunt.be/zoekdienst/apps/tabsearch/index.html?hl=dut</a>
         </p>
-      </div>   
+      </div>
     </section>
 
     <section id="ID25" class="usecase">
@@ -1546,11 +1573,11 @@ Some of the DQV wishes might be included either as Use Cases or as group issues.
 			  While the operation and co-existence of data portals hosting DCAT descriptions
 			  is out of group's scope the standard should support an explicit regulation of
 			  their (re)distribution and hosting. This use case refers to scenarios where
-			  individual Datasets or entire Catalogs are copied among data portals. 
+			  individual Datasets or entire Catalogs are copied among data portals.
 		  </p>
 		  <p>
 			  An explicit reference to the original resource should be maintained within any copy
-              even when both share the same URI (i.e. are local copies of an identical resource).		  
+              even when both share the same URI (i.e. are local copies of an identical resource).
 			  The reference to the original resource should indicate resource's publication context
 			  (data portal) in a way that is accesible for search engine indexing and browser navigation.
 		  </p>
@@ -1565,8 +1592,8 @@ Some of the DQV wishes might be included either as Use Cases or as group issues.
 			<li><a rel="nofollow" class="external free" href="https://www.w3.org/TR/prov-o/">PROV-O: The PROV Ontology</a>, provenance statements</li>
 			<li><a rel="nofollow" class="external free" href="https://www.w3.org/ns/odrl/2/">ODRL Version 2.1 Ontology</a>, policy definition</li>
 		 </ul>
-        </p>        
-      </div>      
+        </p>
+      </div>
        <p class="relatedUseCases">
         <a href="#ID10"></a>
         <a href="#ID11"></a>
@@ -1595,7 +1622,7 @@ Some of the DQV wishes might be included either as Use Cases or as group issues.
       <div class="visible">
         <p class="description">
           <p>Considering DCAT a high-level model for data exchange agree on significant aspects
-missing so far and define extension points (typically properties) for re-use and 
+missing so far and define extension points (typically properties) for re-use and
 integration of existing standards, application profiles etc. The reference listing of aspects deemed relevant
 is based on evaluation of DXWG use cases and <a rel="nofollow" class="external text" href="https://www.iso.org/standard/53798.html">ISO 19115:2014</a>:</p>
 		<p>
@@ -1642,8 +1669,8 @@ is based on evaluation of DXWG use cases and <a rel="nofollow" class="external t
           <p>To address this issue, [[VOCAB-ADMS]] makes use of properties <code>schema:startDate</code> and <code>schema:endDate</code> [[SCHEMA-ORG]].</p>
           <p>[[DCAT-AP]] follows the same approach.</p>
           <p>(Alejandra Gonzalez-Beltran) Adding a few links to other existing approaches:</p>
-          <p>- DATS: <a rel="nofollow" class="external free" href="https://docs.google.com/spreadsheets/d/1aHj_Qvlr7Sf4DlU4uc37PQEOPha8jTxMEdyL_Q7geLQ/edit#gid=0">https://docs.google.com/spreadsheets/d/1aHj_Qvlr7Sf4DlU4uc37PQEOPha8jTxMEdyL_Q7geLQ/edit#gid=0</a> 
-- DataCite: <a rel="nofollow" class="external free" href="http://schema.datacite.org/meta/kernel-4.0/doc/DataCite-MetadataKernel_v4.0.pdf">http://schema.datacite.org/meta/kernel-4.0/doc/DataCite-MetadataKernel_v4.0.pdf</a> 
+          <p>- DATS: <a rel="nofollow" class="external free" href="https://docs.google.com/spreadsheets/d/1aHj_Qvlr7Sf4DlU4uc37PQEOPha8jTxMEdyL_Q7geLQ/edit#gid=0">https://docs.google.com/spreadsheets/d/1aHj_Qvlr7Sf4DlU4uc37PQEOPha8jTxMEdyL_Q7geLQ/edit#gid=0</a>
+- DataCite: <a rel="nofollow" class="external free" href="http://schema.datacite.org/meta/kernel-4.0/doc/DataCite-MetadataKernel_v4.0.pdf">http://schema.datacite.org/meta/kernel-4.0/doc/DataCite-MetadataKernel_v4.0.pdf</a>
 - Google datasets (schema.org): <a rel="nofollow" class="external free" href="https://developers.google.com/search/docs/data-types/datasets">https://developers.google.com/search/docs/data-types/datasets</a> </p>
         </p>
         <p class="links">
@@ -1694,10 +1721,10 @@ is based on evaluation of DXWG use cases and <a rel="nofollow" class="external t
 @prefix dcat:    &lt;http://www.w3.org/ns/dcat#&gt; .
 @prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
 @prefix skos:    &lt;http://www.w3.org/2004/02/skos/core#&gt; .
-ex:ExampleDataset 
+ex:ExampleDataset
   a dcat:Dataset&#xA0;;
   dcterms:conformsTo &lt;http://www.opengis.net/def/crs/EPSG/0/32630&gt; .
-&lt;http://www.opengis.net/def/crs/EPSG/0/32630&gt; 
+&lt;http://www.opengis.net/def/crs/EPSG/0/32630&gt;
   a dcterms:Standard, skos:Concept&#xA0;;
   dcterms:type &lt;http://inspire.ec.europa.eu/glossary/SpatialReferenceSystem&gt;&#xA0;;
   dcterms:identifier "http://www.opengis.net/def/crs/EPSG/0/32630"^^xsd:anyURI&#xA0;;
@@ -1896,8 +1923,8 @@ ex:ExampleDataset
           <ul>
         <li> aggregation</li>
       </ul>
-          <pre> - the Dryad repository defines the concept of a collection of datasets, for example, for datasets related for their topic 
-   e.g. see the collection about Galapagos finches <a rel="nofollow" class="external free" href="http://datadryad.org/handle/10255/dryad.148">http://datadryad.org/handle/10255/dryad.148</a> 
+          <pre> - the Dryad repository defines the concept of a collection of datasets, for example, for datasets related for their topic
+   e.g. see the collection about Galapagos finches <a rel="nofollow" class="external free" href="http://datadryad.org/handle/10255/dryad.148">http://datadryad.org/handle/10255/dryad.148</a>
  - the Gene Expression Onmibus repository (GEO) has the concept of series for related data</pre>
           <ul>
         <li> derivation</li>
@@ -1941,7 +1968,7 @@ Specific cases of relationships that I have come across:</p>
     </section>
     <section id="ID33" class="usecase">
       <h2>Summarization/Characterization of datasets [ID33]</h2>
-      <p class="contributor">Alejandra Gonzalez-Beltran 
+      <p class="contributor">Alejandra Gonzalez-Beltran
 Deliverable(s): DCAT1.1, AP Guidelines </p>
       <p class="tags">
         <span class="tag class_dcat">dcat</span>
@@ -1955,7 +1982,7 @@ Deliverable(s): DCAT1.1, AP Guidelines </p>
           <p>Summary/descriptive statistics that characterize a dataset are important elements to have a high-level overview of the dataset. This is particularly important for datasets that are not publicly accessible, but whose access could be requested under certain conditions. </p>
         </p>
         <p class="existing_approaches">
-          <p>HCLS dataset description included a number of statistics for RDF datasets: <a rel="nofollow" class="external free" href="https://www.w3.org/TR/hcls-dataset/">https://www.w3.org/TR/hcls-dataset/</a> 
+          <p>HCLS dataset description included a number of statistics for RDF datasets: <a rel="nofollow" class="external free" href="https://www.w3.org/TR/hcls-dataset/">https://www.w3.org/TR/hcls-dataset/</a>
 For healthcare data, there is the Automated Characterization of Health Information at Large-scale Longitudinal Evidence System (ACHILLES): <a rel="nofollow" class="external free" href="https://www.ohdsi.org/analytic-tools/achilles-for-data-characterization/">https://www.ohdsi.org/analytic-tools/achilles-for-data-characterization/</a> </p>
         </p>
         <p class="links">
@@ -1964,7 +1991,7 @@ For healthcare data, there is the Automated Characterization of Health Informati
       </ul>
         </p>
       </div>
-     
+
       <p class="relatedRequirements">
 	  <!--
         <a href="#RID33.1"></a>
@@ -2025,7 +2052,7 @@ For healthcare data, there is the Automated Characterization of Health Informati
           <p>
 			The DCAT model contains a hierarchy of the main entities: a catalogue contains datasets and a dataset has associated distributions.
 			This model does not contemplate a situation that datasets exist outside of a catalogue, while in practice datasets may be exposed on
-			the Web as individual entities without description of a catalogue. 
+			the Web as individual entities without description of a catalogue.
 			Also, it may be inferred from the current model that a dataset, if it is defined as part of a catalogue,
 			is part of only one catalogue; no consideration is given to the practice that datasets may be aggregated &#x2013;
 			for example when the European Data Portal aggregates datasets from national data portals.
@@ -2055,7 +2082,7 @@ For healthcare data, there is the Automated Characterization of Health Informati
         <p class="description">
           <p>In the context of W3C working and interest groups (e.g. SWIG, GLD, DWBP) several overlapping vocabularies have been developed for the description of datasets: DCAT, VoID and Data Cube. These vocabularies define similar concepts, but it is not entirely clear how these concepts are related. For example, all three vocabularies define a notion of &#x2018;dataset&#x2019; &#x2013; dcat:Dataset, void:Dataset and qb:DataSet. These notions are similar but not entirely equivalent.For example, it has been argued that void:Dataset and qb:DataSet are more like a dcat:Distribution than a dcat:Dataset.</p>
         </p>
-      </div>           
+      </div>
       <p class="relatedRequirements">
         <a href="#RID36.1"></a>
       </p>
@@ -2081,7 +2108,7 @@ For healthcare data, there is the Automated Characterization of Health Informati
       <div class="expandOrCollapse" onclick="toggleVisibility(this)">&#x25B6; Full use case description (click to collapse):</div>
       <div class="visible">
         <p class="description">
-          <p>The metadata aggregated by Europeana is described using the Europeana Data Model (<a rel="nofollow" class="external text" href="http://pro.europeana.eu/share-your-data/data-guidelines/edm-documentation">EDM</a>) which goal is to ensure interoperability between various cultural heritage data sources. EDM has been developed to be as re-usable as possible. It can be seen as an anchor to which various finer-grained models can be attached, ensuring their interoperability at a semantic level. The alignments done between EDM and other models such as CIDOC-CRM allow the definition of adequate application profiles that enable the transition from one model to another without hindering the interoperability of the data. 
+          <p>The metadata aggregated by Europeana is described using the Europeana Data Model (<a rel="nofollow" class="external text" href="http://pro.europeana.eu/share-your-data/data-guidelines/edm-documentation">EDM</a>) which goal is to ensure interoperability between various cultural heritage data sources. EDM has been developed to be as re-usable as possible. It can be seen as an anchor to which various finer-grained models can be attached, ensuring their interoperability at a semantic level. The alignments done between EDM and other models such as CIDOC-CRM allow the definition of adequate application profiles that enable the transition from one model to another without hindering the interoperability of the data.
 Currently, Europeana itself maintains data in two flavours of EDM is being defined into two specific flavours, each with a specific XML Schema (for RDF/XML data): </p>
           <ul>
         <li> "EDM external":  The metadata aggregated by Europeana from its data providers is being validated against the EDM external XML schema prior to being loaded into the Europeana database.  </li>
@@ -2102,7 +2129,7 @@ Currently, Europeana itself maintains data in two flavours of EDM is being defin
       </ul>
           <p>Currently data providers who would like to provide their data to Europeana using their profiles are unable to do it, even when these profiles would be 'compatible' with the Europeana one for ingestion (which typically happens in the case of a basic EDM extension that adds fields on top of the Europeana profile). This is chiefly because of XML rigidities: Europeana ingestion expects a reference to only one profile/schema. It will not recognize profiles that are compatible with it.</p>
         </p>
-        </div>     
+        </div>
         <p class="links">
           <ul>
         <li> Europeana Data Model documentation: <a rel="nofollow" class="external free" href="http://pro.europeana.eu/share-your-data/data-guidelines/edm-documentation">http://pro.europeana.eu/share-your-data/data-guidelines/edm-documentation</a></li>
@@ -2147,20 +2174,20 @@ Currently, Europeana itself maintains data in two flavours of EDM is being defin
       <div class="visible">
         <p class="description">
           <p>There is an evident demand for capturing various types of time-related information in DCAT.
-This meta use case provides a topic overview and summary of general requirements on temporal 
+This meta use case provides a topic overview and summary of general requirements on temporal
 statements shared among detailed use cases each dealing with an individual aspect. </p>
           <p>There are two basic <i>layers</i> where temporal modeling applies, the content (a) and the publication
 life-cycle layer (b). The former refers to the different time dimensions of the data and its elicitation
 process, i.e. occurrence (phenomenon), overall coverage (scope) and observation time etc.
 The latter considers stages of the DCAT publication process independently of any domain or content.</p>
           <p>While the use cases differ with regard to purpose and interpretation of the <i>temporal expressions</i>
-some general patterns become apparent. There are references to singular or recurrent, named 
+some general patterns become apparent. There are references to singular or recurrent, named
 (last week, Middle Ages, Thanksgiving Day) or formal, numeric expressions (e.g. ISO 8601).
 These might be relative (today, P15M) or absolute, represent an instant or interval.</p>
           <p>The description of evidence and motivation in context for these expressions is delegated to sub-use cases.</p>
 
 		<p>
-		Possible use cases at content level (a)		
+		Possible use cases at content level (a)
 			<ul>
 			<li> Temporal coverage, done - ID27 exists, expresses the boundaries of the dataset's phenomenon times (first, last)
 			</li>
@@ -2192,9 +2219,9 @@ These might be relative (today, P15M) or absolute, represent an instant or inter
         <a href="#ID27"></a>
         <a href="#ID15"></a>
       </p>
-      
+
     </section>
- 
+
     <section id="ID39" class="usecase">
       <h2>DCAT Metadata profile integration [ID39]</h2>
       <p class="contributor"> Lieven Raes, Thomas D'haenens</p>
@@ -2217,7 +2244,7 @@ These might be relative (today, P15M) or absolute, represent an instant or inter
         <p class="existing_approaches">
           <p>GeoDCAT-AP has started with a first attempt of bridging the gap between Geo and Open - <a rel="nofollow" class="external free" href="https://joinup.ec.europa.eu/node/139283">https://joinup.ec.europa.eu/node/139283</a>
 Within Informatie Vlaanderen, a project is running of combining the two worlds in one catalogue with an automated mapping - <a rel="nofollow" class="external free" href="https://www.w3.org/2016/11/sdsvoc/SDSVoc16_PPT_v02">https://www.w3.org/2016/11/sdsvoc/SDSVoc16_PPT_v02</a></p>
-          <p>    
+          <p>
          </p>
         </p>
         <p class="links">
@@ -2263,7 +2290,7 @@ Within Informatie Vlaanderen, a project is running of combining the two worlds i
         </li>
       </ul>
         </p>
-      </div>     
+      </div>
       <p class="relatedRequirements">
 	  <!--
         <a href="#RID40.1"></a>
@@ -2273,8 +2300,8 @@ Within Informatie Vlaanderen, a project is running of combining the two worlds i
     <section id="ID41" class="usecase">
       <h2>Vocabulary constraints [ID41]</h2>
       <p class="contributor">Karen Coyle</p>
-      <p class="tags">       
-        <span class="tag class_profile">profile</span>    
+      <p class="tags">
+        <span class="tag class_profile">profile</span>
       </p>
       <p class="stakeholders">
         <p>Data producers, data consumers. In particular this facilitates sharing between different data consumers.</p>
@@ -2317,9 +2344,9 @@ Within Informatie Vlaanderen, a project is running of combining the two worlds i
     <section id="ID42" class="usecase">
       <h2>Metadata Guidance Rules [ID42]</h2>
       <p class="contributor">Karen Coyle</p>
-	  <p class="tags">       
-        <span class="tag class_profile">profile</span>    
-      </p>      
+	  <p class="tags">
+        <span class="tag class_profile">profile</span>
+      </p>
       <p class="stakeholders">
         <p>Data consumers</p>
       </p>
@@ -2330,7 +2357,7 @@ Within Informatie Vlaanderen, a project is running of combining the two worlds i
         </p>
         <p class="existing_approaches">
           <p>The primary metadata format used by libraries includes these, but that is a very narrow case.</p>
-        </p>     
+        </p>
       </div>
       <p class="relatedRequirements">
         <a href="#RID42.1"></a>
@@ -2362,8 +2389,8 @@ Within Informatie Vlaanderen, a project is running of combining the two worlds i
 			 of a dataset distribution, but it is not possible to indicate compliance with other
 			 types of standards.
           </p>
-         </p>        
-       </div>        
+         </p>
+       </div>
         <p class="existing_approaches">
           <ul>
         <li> Dublin Core includes the property conformsTo to indicate "An established standard to which the described resource conforms."(<a rel="nofollow" class="external free" href="http://dublincore.org/documents/dcmi-terms/#terms-conformsTo">http://dublincore.org/documents/dcmi-terms/#terms-conformsTo</a>)</li>
@@ -2380,7 +2407,7 @@ Within Informatie Vlaanderen, a project is running of combining the two worlds i
         </li>
       </ul>
         </p>
-      
+
       <p class="relatedUseCases">
 		  <a href="#ID41"></a>
 	  </p>
@@ -2407,25 +2434,25 @@ Within Informatie Vlaanderen, a project is running of combining the two worlds i
       <div class="expandOrCollapse" onclick="toggleVisibility(this)">&#x25B6; Full use case description (click to collapse):</div>
       <div class="visible">
         <p class="description">
-          <p>A prerequisite of communicating, annotating or linking a dataset (or a defined part of it) is 
-its unambiguous identification. Since a dataset and its distributions might evolve over time the 
+          <p>A prerequisite of communicating, annotating or linking a dataset (or a defined part of it) is
+its unambiguous identification. Since a dataset and its distributions might evolve over time the
 identification method has to take into account their versioning. The respective distributions
-might significantly differ in terms of media type and further serialization properties and 
+might significantly differ in terms of media type and further serialization properties and
 should therefore have distinct identifiers. </p>
         </p>
         <p class="existing_approaches">
-          <p>While DCAT currently does not support resource versioning, subsets (slices) and derivations 
-of a Dataset might be specified as separate, related Dataset instances. 
-Each one is exposed by a set of dedicated Distribution resources identified by a resolvable URI. 
-These Distribution URIs are used to refer to a particular materialization of the (abstract) Dataset. 
-Their design preferably follows the RESTful URI naming conventions. 
-Referencing Distribution metadata has the benefit of providing access to related properties, 
-e.g. usage restrictions and licensing. 
-Contrary, when there are multiple independent copies of Dataset's metadata 
-across Catalogs this method suffers from generating alternative identifiers 
+          <p>While DCAT currently does not support resource versioning, subsets (slices) and derivations
+of a Dataset might be specified as separate, related Dataset instances.
+Each one is exposed by a set of dedicated Distribution resources identified by a resolvable URI.
+These Distribution URIs are used to refer to a particular materialization of the (abstract) Dataset.
+Their design preferably follows the RESTful URI naming conventions.
+Referencing Distribution metadata has the benefit of providing access to related properties,
+e.g. usage restrictions and licensing.
+Contrary, when there are multiple independent copies of Dataset's metadata
+across Catalogs this method suffers from generating alternative identifiers
 for the same resource (i.e. the same access/download target).</p>
         </p>
-        
+
       </div>
       <p class="relatedUseCases">
         <a href="#ID4"></a>
@@ -2460,7 +2487,7 @@ for the same resource (i.e. the same access/download target).</p>
           <p>The European StatDCAT application profile for data portals in Europe specifies the optional use of the property dqv:hasQualityAnnotation with a range of a subclass of oa:Annotation from the <a rel="nofollow" class="external free" href="https://www.w3.org/ns/oa">Open Annotation Model</a>, which allows annotations to be either embedded text or an external resource identified by a URI.</p>
         </p>
         <p class="links">
-          <ul>			  
+          <ul>
 		<li>
           <a rel="nofollow" class="external free" href="https://www.w3.org/TR/vocab-dqv/">https://www.w3.org/TR/vocab-dqv/</a>
         </li>
@@ -2512,11 +2539,11 @@ for the same resource (i.e. the same access/download target).</p>
 			  <a rel="nofollow" class="external free" href="http://www.loc.gov/bibframe/docs/bibframe-profiles.html#grammar">BIBFRAME Profile Grammar</a>
 			</li>
 		  </ul>
-        </p>        
+        </p>
       </div>
       <p class="relatedUseCases">
         <a href="#ID42"></a>
-        <a href="#ID43"></a>        
+        <a href="#ID43"></a>
       </p>
       <p class="relatedRequirements">
 	  <!--
@@ -2547,10 +2574,10 @@ for the same resource (i.e. the same access/download target).</p>
 			  <ul>
 				<li>
 					<a rel="nofollow" class="external free" href="http://www.loc.gov/marc/specifications/specrecstruc.html">Library of Congress record format</a>
-				</li>			
+				</li>
 			  </ul>
 			</p>
-		  </div>		
+		  </div>
 		  <p class="relatedRequirements">
 	      <!--
 			<a href="#RID47.1"></a>
@@ -2579,10 +2606,10 @@ for the same resource (i.e. the same access/download target).</p>
 				of basing the profile on a defined validation language (SHACL or ShEx or Schematron...), or of deriving
 				the validation rules from the profile. Note, though, that the existing validation languages are quite
 				atomistic and so far there has not been a demonstration of creating a usable profile from a validation language.
-				In any case, the relationship between these two related languages needs to be clarified. 
+				In any case, the relationship between these two related languages needs to be clarified.
 			  </p>
 			</p>
-			
+
 			<p class="links">
 			  <ul>
 				<li> <a rel="nofollow" class="external text" href="http://dublincore.org/documents/dc-dsp/">Dublin Core Description Set Profile</a>
@@ -2613,7 +2640,7 @@ for the same resource (i.e. the same access/download target).</p>
 			<span class="tag class_dcat">dcat</span>
 			<span class="tag class_documentation">documentation</span>
 			<span class="tag class_status">status</span>
-			<span class="tag class_version">version</span>			
+			<span class="tag class_version">version</span>
 			<span class="tag class_profile">profile</span>
 			<span class="tag class_provenance">provenance</span>
 			<span class="tag class_roles">roles</span>
@@ -2628,13 +2655,13 @@ for the same resource (i.e. the same access/download target).</p>
 		  <div class="visible">
 			<p class="description">
 			  <p>
-				It is helpful and often essential to know the business context in which one or more datasets are created and managed, in particular concerning the project, program, initiative through which the dataset was generated. These are typically associated with funding or policy. 
+				It is helpful and often essential to know the business context in which one or more datasets are created and managed, in particular concerning the project, program, initiative through which the dataset was generated. These are typically associated with funding or policy.
 			  </p>
 			  <p>
-				The business context links associated entities participating in a project. Projects can be an umbrella or unifying entity for one or many datasets which share the same project context. 
+				The business context links associated entities participating in a project. Projects can be an umbrella or unifying entity for one or many datasets which share the same project context.
 			  </p>
 			  <p>
-				DCAT or users of DCAT have often used externally defined classes for associated concepts from FOAF and W3C Organization ontology, but there is not currently any slot or guidance about how to relate a dataset to its business context. However, there is no general agreement on a class for 'Project'. The class might includes spatial, temporal, social, descriptive and financial information. There are a number of discipline or domain specific Project classes (see Links below), but there does not appear to be anything available which is sufficiently expressive and generic. 
+				DCAT or users of DCAT have often used externally defined classes for associated concepts from FOAF and W3C Organization ontology, but there is not currently any slot or guidance about how to relate a dataset to its business context. However, there is no general agreement on a class for 'Project'. The class might includes spatial, temporal, social, descriptive and financial information. There are a number of discipline or domain specific Project classes (see Links below), but there does not appear to be anything available which is sufficiently expressive and generic.
 			  </p>
 			  <p>As part of the DXWG there might be an opportunity to define a basic ontology for projects and related concepts. This should have a tight scope and few dependencies, similar to the approach used in <a rel="nofollow" class="external text" href="https://www.w3.org/TR/vocab-org/">W3C Organization ontology</a>.</p>
 			</p>
@@ -2644,7 +2671,7 @@ for the same resource (i.e. the same access/download target).</p>
 		    </p>
 			<p class="links">
 			  <ul>
-				<li> <a rel="nofollow" class="external text" href="http://dbpedia.org/ontology/Project">dbPedia Ontology <i>Project</i></a> 
+				<li> <a rel="nofollow" class="external text" href="http://dbpedia.org/ontology/Project">dbPedia Ontology <i>Project</i></a>
 				</li>
 				<li> <a rel="nofollow" class="external text" href="http://xmlns.com/foaf/spec/#term_Project">FOAF Project</a>
 				</li>
@@ -2667,15 +2694,15 @@ for the same resource (i.e. the same access/download target).</p>
 			<a href="#RID49.2"></a>-->
 		  </p>
 		 </section>
-		 
+
 	    <section id="ID50" class="usecase">
 		  <h2>Annotating changes that do not change the information content [ID50]</h2>
 		  <p class="contributor">Peter Winstanley</p>
 		  <p class="tags">
 			<span class="tag class_dcat">dcat</span>
 			<span class="tag class_status">status</span>
-			<span class="tag class_version">version</span>			
-			<span class="tag class_provenance">provenance</span>		
+			<span class="tag class_version">version</span>
+			<span class="tag class_provenance">provenance</span>
 		  </p>
 		  <p class="stakeholders">
 			<p>data producer, data publisher, validation program(s)</p>
@@ -2711,13 +2738,13 @@ for the same resource (i.e. the same access/download target).</p>
 
 <!--
 	Looking at https://www.w3.org/TR/sdw-ucr/#Requirements
-	the requirement labels (<h3>) should be really short 
+	the requirement labels (<h3>) should be really short
 	in order to render completely within a single sidebar line,
 	examples are attributed nouns: "Lightweight API", nominal
 	"Compatibility with existing practices" or verbal
 	phrases "Avoid coordinate transformations".
 -->
-	
+
 <section class="contentSection" id="Requirements">
   <h1>Requirements</h1>
   <p>This chapter lists the requirements for the Working Group deliverables</p>
@@ -2730,11 +2757,472 @@ for the same resource (i.e. the same access/download target).</p>
 	This identifies a specific requirement to provide a property with the required semantics to meet the requirement and guidance on usage of this property. (Note, a 'recommended way' may also involve such canonical properties - requirements described this way reflects cases where such properties have been implemented by communities and the identified requirement is to consolidate and make these properties generally used by the wider community.
   </p>
   <p class="issue">Many of these requirements depend on interpretation of keywords such as "profile".
-	  At this stage the definitions for these terms are defined in the <a href="#Tags">Tags</a> section. 
+	  At this stage the definitions for these terms are defined in the <a href="#Tags">Tags</a> section.
 	These terms should be cross-referenced as links - but may be best to choose appropriate format - i.e. a formal glossary?
-		  
+
   </p>
-		  
+
+<section id="IdentificationRequirements">
+<h2>Identification</h2>
+
+<section class="requirement" id="RID11.1">
+    <h3>Dereferenceable identifiers [RDID]</h3>
+    <p>Encode identifiers as dereferenceable HTTP URIs</p>
+    <p class="relatedUseCases">
+      <a href="#ID11"></a>
+    </p>
+  </section>
+
+  <section class="requirement" id="RID11.2">
+    <h3>Identifier type [RIDT]</h3>
+    <p>Indicate type of identifier (e.g. <code>prism:doi, bibo:doi, ISBN</code> etc.).</p>
+    <p class="relatedUseCases">
+      <a href="#ID11"></a>
+    </p>
+  </section>
+
+  <section class="requirement" id="RID11.3">
+    <h3>Primary and alternative identifier [RIDALT]</h3>
+    <p>Provide means to distinguish the primary and alternative (legacy) identifiers.</p>
+    <p class="relatedUseCases">
+      <a href="#ID11"></a>
+    </p>
+  </section>
+
+</section>
+
+<section id="VersioningRequirements">
+<h2>Versioning</h2>
+
+  <section class="requirement" id="RVer1">
+    <h3>Version subject [RVSS]</h3>
+    <p>Identify DCAT resources that are subject to versioning, i.e. Catalog, Dataset, Distribution.</p>
+    <p class="relatedRequirements">
+      <a href="#RID6"></a>
+	  <a href="#RID7"></a>
+	  <a href="#RID8"></a>
+	</p>
+	<p class="relatedUseCases">
+      <a href="#ID4"></a>
+    </p>
+  </section>
+
+  <section class="requirement" id="RVer2"><!-- RID5 -->
+    <h3>Version definition [RVSDF]</h3>
+    <p>Provide clear guidance on conditions, type and severity of a resource's update that might motivate the creation of a new version in scenarios such as dataset evolution, conversion,
+	translations etc, including how this may assist change management processes for consumers (e.g. semantic versioning techniques)
+	</p>
+    <p class="relatedRequirements">
+      <a href="#RVer1"></a>
+	</p>
+	<p class="relatedUseCases">
+      <a href="#ID4"></a>
+    </p>
+  </section>
+  <section class="requirement" id="RVer3"><!--RID6-->
+    <h3>Version identifier [RVSID]</h3>
+    <p>Provide a means to identify a version (URI-segment, property etc.).
+       Clarify relationship to identifier of the subject resource.
+    </p>
+ 	<p class="relatedRequirements">
+      <a href="#RVer2"></a>
+      <a href="#RVer4"></a>
+      <a href="#RVer5"></a>
+	</p>
+	<p class="relatedUseCases">
+      <a href="#ID4"></a>
+    </p>
+  </section>
+ <!-- rejected
+ <section class="requirement" id="RVer4">
+    <h3>Version status [RVer4]</h3>
+    <p>
+    	Indicate the status of a version in terms stability, fidelity etc. (e.g. major, minor, stable).
+    	The version identifier might refer to the version status (semantic version).
+    </p>
+ 	<p class="relatedRequirements">
+      <a href="#RVer2"></a>
+      <a href="#RVer3"></a>
+	</p>
+	<p class="relatedUseCases">
+      <a href="#ID4"></a>
+    </p>
+  </section> -->
+  <section class="requirement" id="RVer5">
+    <h3>Version release date [RVSDT]</h3>
+    <p>
+     It must be possible to assign a date to a version. The version identifier might refer to the release date.
+    </p>
+	<p class="relatedRequirements">
+	  <a href="#RVer2"></a>
+      <a href="#RVer3"></a>
+    </p>
+    <p class="relatedUseCases">
+      <a href="#ID4"></a>
+    </p>
+  </section>
+  <section class="requirement" id="RVer6">
+    <h3>Version delta [RVSDA]</h3>
+    <p>
+      Provide a way to indicate the change delta or other change information from the previous version.
+    </p>
+	<p class="relatedRequirements">
+      <a href="#RVer2"></a>
+    </p>
+    <p class="relatedUseCases">
+      <a href="#ID4"></a>
+    </p>
+  </section>
+<!--  rejected
+ <section class="requirement" id="RVer7">
+    <h3>Version discovery [RVer7]</h3>
+    <p>
+    	Provide a means to search and discover existing versions of a DCAT resource.
+    	This should include both metadata elements referencing previous and next versions,
+    	lists of versions, and by implication the ability to search catalogs for related versions.
+    </p>
+	<p class="relatedRequirements">
+      <a href="#RVer2"></a>
+	</p>
+	<p class="relatedUseCases">
+      <a href="#ID4"></a>
+    </p>
+  </section> -->
+</section>
+
+<section id="QualitativeInformationRequirements">
+<h2>Qualitative information</h2>
+
+ Human readable information to evaluate/understand data and its context.
+
+  <section class="requirement" id="RID14">
+    <h3>Usage notes [RUN]</h3>
+    <p>Ability to provide information on how to use the data.</p>
+		      <p class="note">Should this also apply to specific distributions?</p>
+	<p class="relatedRequirements">
+      <a href="#RID3"></a>
+      <a href="#RID11"></a>
+      <a href="#RID15"></a>
+    </p>
+    <p class="relatedUseCases">
+      <a href="#ID9"></a>
+    </p>
+  </section>
+
+  <section class="requirement" id="RID33.1">
+    <h3>Summary statistics [RSS]</h3>
+    <p>Express summary statistics and descriptive metrics to characterize a Dataset.</p>
+    <p class="relatedUseCases">
+    </p>
+  </section>
+
+  <section class="requirement" id="RID16">
+    <h3>Provenance information [RPIF]</h3>
+    <p>Provide a way to link to structured information about the provenance of a dataset including:
+	 <ul>
+	 <li>the input data used to create a dataset to the dataset.</li>
+	 <li>the software used to produce the dataset to the dataset.</li>
+	 <li>an extensible model different types of agent roles</li>
+	 <li>funders</li>
+
+	 </ul>
+	 </p>
+  <p class="note">dct:creator, dct:publisher etc are special cases, which require guidance, further roles may be defined in provenance or other richer models.
+		      The requirement is to establish an extensible mechanism, and for profiles to specify canonical equivalents for the special case properties of dcat:Dataset</p>
+
+    <p class="relatedUseCases">
+      <a href="#ID9"></a>
+      <a href="#ID12"></a>
+      <a href="#ID13"></a>
+       <a href="#ID31"></a>
+    </p>
+  </section>
+
+ <section class="requirement" id="RID31.1">
+    <h3>Funding source [RFS]</h3>
+    <p>Provide means to describe the funding (amount and source) of a Dataset (or entire Catalog).</p>
+    <p class="relatedUseCases">
+      <a href="#ID31"></a>
+    </p>
+  </section>
+
+    <section class="requirement" id="RID49.1">
+    <h3>Project context [RPCX]</h3>
+    <p>Provide a means to define a "project" as a research, funding or work organzation context of a dataset.</p>
+    <p class="relatedUseCases">
+      <a href="#ID49"></a>
+    </p>
+    <p class="relatedRequirements">
+	   <a href="#ID49.2"></a>
+	</p>
+  </section>
+
+  <section class="requirement" id="RID18">
+    <h3>Data quality model [RDQM]</h3>
+    <p>Identify common modeling patterns for different aspects of data quality based on frequently referenced data quality attributes found in existing standards and practices.</p>
+	<p scope="note">This includes potential use and revision of DQV</p>
+	<p>Aspects include:
+	<li>the degree of a dataset's precision (i.e. measure of resolution or variability).</li>
+	<li>the degree of a dataset's accuracy (i.e. measure of correctness).</li>
+	<li>the degree a dataset conforms to a stated quality standard.</li>
+	<li>details of data quality conformance test results.</li>
+	</p>
+    <p class="relatedUseCases">
+      <a href="#ID15"></a>
+      <a href="#ID14"></a>
+      <a href="#ID16"></a>
+      <a href="#ID21"></a>
+      <a href="#ID22"></a>
+      <a href="#ID23"></a>
+	</p>
+  </section>
+
+   <section class="requirement" id="RID45.1">
+    <h3>Quality-related information [RDQIF]</h3>
+    <p>Define a way to associate quality-related information with Datasets.</p>
+   <!--Define a means to advertise any quality-related information; this might be text-based or more machine-processable.-->
+    <p class="relatedUseCases">
+      <a href="#ID45"></a>
+    </p>
+  </section>
+
+</section>
+
+
+<section id="FormalDescriptionRequirements">
+ <h2>Formal description</h2>
+
+	Requirements relating to machine readable descriptions of data and distributions.
+
+
+ <section class="requirement" id="RID10">
+    <h3>Dataset type [RDST]</h3>
+    <p>Provide a mechanism to indicate the type of data being described and recommend vocabularies to use given the dataset type indicated. </p>
+		  <p class="note">Providing examples of scope will provide guidance, without being unnecessarily restrictive.
+		      The key requirement is interoperability, achieved by using standardised vocabulary terms. It it unclear whether a canonical registry is required or whether communities should constrain choice via DCAT profiles.</p>
+	<p class="relatedRequirements">
+
+    </p>
+    <p class="relatedUseCases">
+      <a href="#ID8"></a>
+      <a href="#ID20"></a>
+	  </p>
+  </section>
+
+  <section class="requirement" id="RID11">
+    <h3>Dataset aspects [RDSAT]</h3>
+    <p>Provide recommendations and mechanisms for data providers to describe datasets with a formal description of aspects (e.g. instrument/sensor used, spatial feature, observable property, quantity kind).</p>
+
+	<p class="note">Finer grained semantics will also allow dataset dimensions to be described,
+		      and distributions described using these semantics - for example how a dataset is composed of multiple subsets,
+		      such as a set of image bands or tiles, or parameterised filtering/subsetting services</p>
+	<p class="note">This requirement applies to catalogues of DCAT records, and is thus related to the concept of profiles,
+		      which are expected to define classification dimensions (use of controlled vocabularies in mandatory properties)
+	</p>
+
+	<p class="relatedRequirements">
+      <a href="#RID3"></a>
+      <a href="#RID12"></a>
+    </p>
+	<p class="relatedUseCases">
+      <a href="#ID7"></a>
+	  <a href="#ID46"></a>
+      <a href="#ID37"></a>
+	        <a href="#ID33"></a>
+	  </p>
+  </section>
+
+  <section class="requirement" id="RID28.1">
+    <h3>Reference system [RRS]</h3>
+    <p>Provide means to specify the reference system(s) used in a dataset.</p>
+    <p class="relatedUseCases">
+      <a href="#ID28"></a>
+    </p>
+  </section>
+
+  <section class="requirement" id="RID29.1">
+    <h3>Spatial coverage [RSC]</h3>
+    <p>Provide means to specify spatial coverage with geometries.</p>
+    <p class="relatedUseCases">
+      <a href="#ID29"></a>
+    </p>
+  </section>
+
+   <section class="requirement" id="RID27.1">
+    <h3>Temporal coverage [RTC]</h3>
+    <p>Allow for specification of the start and/or end date of temporal coverage.</p>
+    <p class="relatedUseCases">
+      <a href="#ID27"></a>
+    </p>
+  </section>
+</section>
+
+<section id="DistribitionRequirements">
+<h2>Distribution</h2>
+
+<section class="requirement" id="RID34.1">
+  <h3>Distribution definition [RDIDF]</h3>
+  <p>Revise definition of Distribution. Make clearer what a Distribution is and what it is not. Provide better guidance for data publishers.</p>
+  <p class="relatedUseCases">
+    <a href="#ID34"></a>
+  </p>
+</section>
+
+ <section class="requirement" id="RID12">
+  <h3>Distribution schema [RDIS]</h3>
+  <p>Define a way to include identification of the schema the described data conforms to</p>
+    <p class="note">This may include rich information via extensions points, URI templates and parameters, dimensions and subsetting operations,
+        dereferenceable identifiers of service behaviour profiles and canonical identifiers of well-known web service interfaces (e.g. OGC - WFS, WMS, OpenDAP, REST apis).</p>
+    <p class="note">Such a description may be provided through identifier of a suitable profile that defines interoperability conditions the distribution conforms to.</p>
+<p class="relatedRequirements">
+    <a href="#RID3"></a>
+    <a href="#RID11"></a>
+  </p>
+  <p class="relatedUseCases">
+    <a href="#ID6"></a>
+    <a href="#ID33"></a>
+   <a href="#ID17"></a>
+    <a href="#ID22"></a>
+ </p>
+</section>
+
+<section class="requirement" id="RID13">
+  <h3>Distribution service [RDISV]</h3>
+  <p>Ability 1) to describe the type of distribution and 2) provide information about the type of service</p>
+<p class="note">Such a description may be provided through a suitable profile identifier that defines a profile of the relevant service type.</p>
+<p class="relatedRequirements">
+    <a href="#RID3"></a>
+    <a href="#RID12"></a>
+  </p>
+  <p class="relatedUseCases">
+    <a href="#ID6"></a>
+    <a href="#ID18"></a>
+    <a href="#ID21"></a>
+</p>
+</section>
+
+ <section class="requirement" id="RID1.1">
+<h3>Distribution package [RDIP]</h3>
+<p>Define way to specify content of packaged files in a Distribution.</p>
+<p>For example, a set of files may be organised in an archive format and then compressed,
+    but dct:hasFormat property only indicates the encoding type of the outer layer of packaging. </p>
+<p class="relatedUseCases"><a href="#ID1"></a></p>
+</section>
+
+</section>
+
+<section id="RelationshipRequirements">
+
+<h2>Relationships</h2>
+
+ How identified objects relate to each other.
+
+  <section class="requirement" id="RID20">
+    <h3>Related datasets [RRDS]</h3>
+    <p>Ability to represent the different relationships between datasets, including: versions of a dataset, collection of datasets, to describe their inclusion criteria and to define the 'hasPart'/'partOf' relationship, derivation, e.g. processed data that is derived from raw data  </p>
+    <p class="note">this requriement to be rolled in here: Update method of Dataset:
+    Indicate the update method of a Dataset description, e.g. whether each new dataset entirely supercedes previous ones (is stand-alone), or whether there is a base dataset with files that effect updates to that base.
+	</p>
+    <p class="relatedUseCases">
+      <a href="#ID47"></a>
+    </p>
+	<p class="relatedRequirements">
+      <a href="#RID8"></a>
+	  <a href="#RID16"></a>
+	  </p>
+	 <p class="relatedUseCases">
+      <a href="#ID32"></a>
+    </p>
+  </section>
+
+  <section class="requirement" id="RID49.2">
+    <h3>Project relation [RPR]</h3>
+    <p>Provide a means to indicate the relation of Datasets to a project.</p>
+    <p class="relatedUseCases">
+      <a href="#ID49"></a>
+    </p>
+    <p class="relatedRequirements">
+	   <a href="#ID49.1"></a>
+	</p>
+  </section>
+
+  <section class="requirement" id="RID35.1">
+    <h3>Datasets vs. Catalog relation [RDSCR]</h3>
+    <p>Clarify the relationships between Datasets and zero, one or multiple Catalogs,
+    e.g. in scenarios of copying, harvesting and aggregation of Dataset descriptions
+    among Catalogs.</p>
+    <p class="relatedUseCases">
+      <a href="#ID35"></a>
+    </p>
+  </section>
+
+</section>
+
+<section id="FederationCitationRequirements">
+<h2>Federation and citation</h2>
+
+Aspects of identification and control over copies.
+
+  <section class="requirement" id="RID19">
+   <h3>Dataset access [RDSA]</h3>
+   <p>Provide a way to specify access restrictions for both a dataset and a distribution.</p>
+   <p>Provide a way to define the meaning of the access restrictions for a dataset or distribution and to specify what is required to access a dataset and distribution.</p>
+   <p class="relatedUseCases">
+      <a href="#ID17"></a>
+    </p>
+  </section>
+
+
+  <section class="requirement" id="RID17">
+    <h3>Dataset citation [RDSC]</h3>
+    <p>Provide a way to specify information required for data citation (e.g., dataset authors, title, publication year, publisher, persistent identifier)</p>
+	<p class="relatedRequirements">
+      <a href="#RID6"></a>
+    </p>
+    <p class="relatedUseCases">
+      <a href="#ID10"></a>
+    </p>
+  </section>
+
+   <section class="requirement" id="RID15">
+    <h3>Dataset publications [RDSP]</h3>
+    <p>Provide a way to link publications about a dataset to the dataset.</p>
+	<p class="relatedRequirements">
+      <a href="#RID3"></a>
+      <a href="#RID11"></a>
+      <a href="#RID15"></a>
+    </p>
+    <p class="relatedUseCases">
+      <a href="#ID9"></a>
+    </p>
+  </section>
+
+   <section class="requirement" id="RID25.2">
+    <h3>Publication source [RPS]</h3>
+    <p>Provide a way to cite the original metadata with a dereferenceable identifier.
+	</p>
+    <p class="relatedUseCases">
+      <a href="#ID25"></a>
+    </p>
+    <p class="relatedRequirements">
+      <a href="#RID25.1"></a>
+	</p>
+  </section>
+
+  <section class="requirement" id="RID25.1">
+    <h3>Publication control [RPC]</h3>
+    <p>Provide means to express rights relating to reuse of DCAT metadata</p>
+    <p class="relatedUseCases">
+      <a href="#ID25"></a>
+    </p>
+    <p class="relatedRequirements">
+      <a href="#RID25.2"></a>
+	</p>
+  </section>
+
+
+</section>
+
 <section id="ProfilesRequirements">
 <h2>Profile</h2>
 
@@ -2743,7 +3231,7 @@ for the same resource (i.e. the same access/download target).</p>
     <p>Create a sufficiently wide definition of an application profile to address declaration of interoperability profiles data
       		may conform to, and through this mechanism provide the means for DCAT instances and collections to also declare the
 		 profiles of DCAT they conform to.</p>
-		 <p class="note">These Use case specific requirements apply to the required scope of this definition. Where 
+		 <p class="note">These Use case specific requirements apply to the required scope of this definition. Where
 		      appropriate these are also captured as additional requirements.
 		      	<ol>
 				<li>Clarify any relationship between profiles and validation languages</li>
@@ -2790,7 +3278,7 @@ for the same resource (i.e. the same access/download target).</p>
 	  <a href="#ID5"></a>
 	  <a href="#ID48"></a>
     </p>
-   
+
   </section>
 
   <section class="requirement" id="RID2">
@@ -2836,414 +3324,12 @@ for the same resource (i.e. the same access/download target).</p>
   </section>
 </section>
 
-<section id="VersioningRequirements">
-<h2>Versioning</h2>
-
-  <section class="requirement" id="RVer1">
-    <h3>Version subject [RVSS]</h3>
-    <p>Identify DCAT resources that are subject to versioning, i.e. Catalog, Dataset, Distribution.</p>
-    <p class="relatedRequirements">
-      <a href="#RID6"></a>
-	  <a href="#RID7"></a>
-	  <a href="#RID8"></a>
-	</p>	
-	<p class="relatedUseCases">
-      <a href="#ID4"></a>
-    </p>
-  </section>
-
-  <section class="requirement" id="RVer2"><!-- RID5 -->
-    <h3>Version definition [RVSDF]</h3>
-    <p>Provide clear guidance on conditions, type and severity of a resource's update that might motivate the creation of a new version in scenarios such as dataset evolution, conversion, 
-	translations etc, including how this may assist change management processes for consumers (e.g. semantic versioning techniques)	   
-	</p>
-    <p class="relatedRequirements">
-      <a href="#RVer1"></a>	  
-	</p>	
-	<p class="relatedUseCases">
-      <a href="#ID4"></a>
-    </p>
-  </section>
-  <section class="requirement" id="RVer3"><!--RID6-->
-    <h3>Version identifier [RVSID]</h3>
-    <p>Provide a means to identify a version (URI-segment, property etc.). 	   
-       Clarify relationship to identifier of the subject resource.
-    </p>
- 	<p class="relatedRequirements">
-      <a href="#RVer2"></a> 
-      <a href="#RVer4"></a>
-      <a href="#RVer5"></a>
-	</p>
-	<p class="relatedUseCases">
-      <a href="#ID4"></a>
-    </p>
-  </section>
- <!-- rejected
- <section class="requirement" id="RVer4">
-    <h3>Version status [RVer4]</h3>
-    <p>
-    	Indicate the status of a version in terms stability, fidelity etc. (e.g. major, minor, stable).
-    	The version identifier might refer to the version status (semantic version). 
-    </p>
- 	<p class="relatedRequirements">
-      <a href="#RVer2"></a> 
-      <a href="#RVer3"></a>
-	</p>
-	<p class="relatedUseCases">
-      <a href="#ID4"></a>
-    </p>
-  </section> -->
-  <section class="requirement" id="RVer5">
-    <h3>Version release date [RVSDT]</h3>
-    <p>
-     It must be possible to assign a date to a version. The version identifier might refer to the release date. 
-    </p>
-	<p class="relatedRequirements">
-	  <a href="#RVer2"></a> 
-      <a href="#RVer3"></a>
-    </p>	
-    <p class="relatedUseCases">
-      <a href="#ID4"></a>
-    </p>
-  </section>
-  <section class="requirement" id="RVer6">
-    <h3>Version delta [RVSDA]</h3>
-    <p>
-      Provide a way to indicate the change delta or other change information from the previous version.
-    </p>
-	<p class="relatedRequirements">
-      <a href="#RVer2"></a>
-    </p>
-    <p class="relatedUseCases">
-      <a href="#ID4"></a>
-    </p>
-  </section>
-<!--  rejected
- <section class="requirement" id="RVer7">
-    <h3>Version discovery [RVer7]</h3>
-    <p>
-    	Provide a means to search and discover existing versions of a DCAT resource. 
-    	This should include both metadata elements referencing previous and next versions, 
-    	lists of versions, and by implication the ability to search catalogs for related versions.
-    </p>
-	<p class="relatedRequirements">
-      <a href="#RVer2"></a>
-	</p> 
-	<p class="relatedUseCases">
-      <a href="#ID4"></a>
-    </p>
-  </section> -->
-</section>
-
- <section id="FormalDescriptionRequirements"> 
- <h2>Formal description</h2>
-
-	Requirements relating to machine readable descriptions of data and distributions.
- 
-  
- <section class="requirement" id="RID10">
-    <h3>Dataset type [RDST]</h3>
-    <p>Provide a mechanism to indicate the type of data being described and recommend vocabularies to use given the dataset type indicated. </p>
-		  <p class="note">Providing examples of scope will provide guidance, without being unnecessarily restrictive. 
-		      The key requirement is interoperability, achieved by using standardised vocabulary terms. It it unclear whether a canonical registry is required or whether communities should constrain choice via DCAT profiles.</p>
-	<p class="relatedRequirements">
- 
-    </p> 
-    <p class="relatedUseCases">
-      <a href="#ID8"></a>
-      <a href="#ID20"></a>
-	  </p>
-  </section>
-  
-  <section class="requirement" id="RID11">
-    <h3>Dataset aspects [RDSAT]</h3>
-    <p>Provide recommendations and mechanisms for data providers to describe datasets with a formal description of aspects (e.g. instrument/sensor used, spatial feature, observable property, quantity kind).</p>
-
-	<p class="note">Finer grained semantics will also allow dataset dimensions to be described, 
-		      and distributions described using these semantics - for example how a dataset is composed of multiple subsets, 
-		      such as a set of image bands or tiles, or parameterised filtering/subsetting services</p>
-	<p class="note">This requirement applies to catalogues of DCAT records, and is thus related to the concept of profiles, 
-		      which are expected to define classification dimensions (use of controlled vocabularies in mandatory properties)
-	</p>
-
-	<p class="relatedRequirements">
-      <a href="#RID3"></a>
-      <a href="#RID12"></a>
-    </p> 
-	<p class="relatedUseCases">
-      <a href="#ID7"></a>
-	  <a href="#ID46"></a>
-      <a href="#ID37"></a>
-	        <a href="#ID33"></a>
-	  </p>
-  </section>
-
-  <section class="requirement" id="RID28.1">
-    <h3>Reference system [RRS]</h3>
-    <p>Provide means to specify the reference system(s) used in a dataset.</p>
-    <p class="relatedUseCases">
-      <a href="#ID28"></a>
-    </p>
-  </section>
-
-  <section class="requirement" id="RID29.1">
-    <h3>Spatial coverage [RSC]</h3>
-    <p>Provide means to specify spatial coverage with geometries.</p>
-    <p class="relatedUseCases">
-      <a href="#ID29"></a>
-    </p>
-  </section>
-
-   <section class="requirement" id="RID27.1">
-    <h3>Temporal coverage [RTC]</h3>
-    <p>Allow for specification of the start and/or end date of temporal coverage.</p>
-    <p class="relatedUseCases">
-      <a href="#ID27"></a>
-    </p>
-  </section>
-
-  <section class="requirement" id="RID34.1">
-    <h3>Distribution definition [RDIDF]</h3>
-    <p>Revise definition of Distribution. Make clearer what a Distribution is and what it is not. Provide better guidance for data publishers.</p>
-    <p class="relatedUseCases">
-      <a href="#ID34"></a>
-    </p>
-  </section>
-
-   <section class="requirement" id="RID12">
-    <h3>Distribution schema [RDIS]</h3>
-    <p>Define a way to include identification of the schema the described data conforms to</p>
-      <p class="note">This may include rich information via extensions points, URI templates and parameters, dimensions and subsetting operations,
-		      dereferenceable identifiers of service behaviour profiles and canonical identifiers of well-known web service interfaces (e.g. OGC - WFS, WMS, OpenDAP, REST apis).</p>
-      <p class="note">Such a description may be provided through identifier of a suitable profile that defines interoperability conditions the distribution conforms to.</p>
-	<p class="relatedRequirements">
-      <a href="#RID3"></a>
-      <a href="#RID11"></a>
-    </p> 
-    <p class="relatedUseCases">
-      <a href="#ID6"></a>
-      <a href="#ID33"></a>
-     <a href="#ID17"></a>
-      <a href="#ID22"></a>
-	 </p>
-  </section>
-  
-  <section class="requirement" id="RID13">
-    <h3>Distribution service metadata [RDISMD]</h3>
-    <p>Ability 1) to describe the type of distribution and 2) provide information about the type of service</p>
-	<p class="note">Such a description may be provided through a suitable profile identifier that defines a profile of the relevant service type.</p>
-	<p class="relatedRequirements">
-      <a href="#RID3"></a>
-      <a href="#RID12"></a>
-    </p> 
-    <p class="relatedUseCases">
-      <a href="#ID6"></a>
-      <a href="#ID18"></a>
-      <a href="#ID21"></a>
-	</p>
-  </section>
-
-   <section class="requirement" id="RID1.1">
-	<h3>Distribution package [RDIP]</h3>
-	<p>Define way to specify content of packaged files in a Distribution.</p>
-	<p>For example, a set of files may be organised in an archive format and then compressed, 
-		  but dct:hasFormat property only indicates the encoding type of the outer layer of packaging. </p>
-	<p class="relatedUseCases"><a href="#ID1"></a></p>
-  </section>
-
-</section>
-
-<section id="QualitativeInformationRequirements">
-<h2>Qualitative information</h2>
-
- Human readable information to evaluate/understand data and its context.
- 
-  <section class="requirement" id="RID14">
-    <h3>Usage notes [RUN]</h3>
-    <p>Ability to provide information on how to use the data.</p>
-		      <p class="note">Should this also apply to specific distributions?</p>
-	<p class="relatedRequirements">
-      <a href="#RID3"></a>
-      <a href="#RID11"></a>
-      <a href="#RID15"></a>
-    </p> 
-    <p class="relatedUseCases">
-      <a href="#ID9"></a>
-    </p>
-  </section>
-
-  <section class="requirement" id="RID33.1">
-    <h3>Summary statistics [RSS]</h3>
-    <p>Express summary statistics and descriptive metrics to characterize a Dataset.</p>
-    <p class="relatedUseCases">
-    </p>
-  </section>
-  
-  <section class="requirement" id="RID16">
-    <h3>Provenance information [RPIF]</h3>
-    <p>Provide a way to link to structured information about the provenance of a dataset including:
-	 <ul>
-	 <li>the input data used to create a dataset to the dataset.</li>
-	 <li>the software used to produce the dataset to the dataset.</li>
-	 <li>an extensible model different types of agent roles</li>
-	 <li>funders</li>
-	 
-	 </ul>
-	 </p>
-  <p class="note">dct:creator, dct:publisher etc are special cases, which require guidance, further roles may be defined in provenance or other richer models.
-		      The requirement is to establish an extensible mechanism, and for profiles to specify canonical equivalents for the special case properties of dcat:Dataset</p>
-
-    <p class="relatedUseCases">
-      <a href="#ID9"></a>
-      <a href="#ID12"></a>
-      <a href="#ID13"></a>
-       <a href="#ID31"></a>
-    </p>
-  </section>
- 
- <section class="requirement" id="RID31.1">
-    <h3>Funding source [RFS]</h3>
-    <p>Provide means to describe the funding (amount and source) of a Dataset (or entire Catalog).</p>
-    <p class="relatedUseCases">
-      <a href="#ID31"></a>
-    </p>
-  </section>
-
-    <section class="requirement" id="RID49.1">
-    <h3>Project context [RPCX]</h3>
-    <p>Provide a means to define a "project" as a research, funding or work organzation context of a dataset.</p>
-    <p class="relatedUseCases">
-      <a href="#ID49"></a>
-    </p>
-    <p class="relatedRequirements">
-	   <a href="#ID49.2"></a>
-	</p>
-  </section>
-
-  <section class="requirement" id="RID18">
-    <h3>Data quality model [RDQM]</h3>
-    <p>Identify common modeling patterns for different aspects of data quality based on frequently referenced data quality attributes found in existing standards and practices.</p>
-	<p scope="note">This includes potential use and revision of DQV</p>
-	<p>Aspects include: 
-	<li>the degree of a dataset's precision (i.e. measure of resolution or variability).</li>
-	<li>the degree of a dataset's accuracy (i.e. measure of correctness).</li>
-	<li>the degree a dataset conforms to a stated quality standard.</li>
-	<li>details of data quality conformance test results.</li>
-	</p>
-    <p class="relatedUseCases">
-      <a href="#ID15"></a>
-      <a href="#ID14"></a>
-      <a href="#ID16"></a>
-      <a href="#ID21"></a>
-      <a href="#ID22"></a>
-      <a href="#ID23"></a>
-	</p>
-  </section>
-  
-   <section class="requirement" id="RID45.1">
-    <h3>Quality-related information [RDQIF]</h3>
-    <p>Define a way to associate quality-related information with Datasets.</p>
-   <!--Define a means to advertise any quality-related information; this might be text-based or more machine-processable.-->
-    <p class="relatedUseCases">
-      <a href="#ID45"></a>
-    </p>
-  </section>
-
-</section>
-
-<section id="FederationCitationRequirements">
-<h2>Federation and citation</h2>
-
-Aspects of identification and control over copies.
-
- <section class="requirement" id="RID11.1">
-    <h3>Dereferenceable identifiers [RDID]</h3>
-    <p>Encode identifiers as dereferenceable HTTP URIs</p>
-    <p class="relatedUseCases">
-      <a href="#ID11"></a>
-    </p>
-  </section>
-  
-  <section class="requirement" id="RID11.2">
-    <h3>Identifier type [RIDT]</h3>
-    <p>Indicate type of identifier (e.g. <code>prism:doi, bibo:doi, ISBN</code> etc.).</p>
-    <p class="relatedUseCases">
-      <a href="#ID11"></a>
-    </p>
-  </section>
-  
-  <section class="requirement" id="RID11.3">
-    <h3>Primary and alternative identifier [RIDALT]</h3>
-    <p>Provide means to distinguish the primary and alternative (legacy) identifiers.</p>
-    <p class="relatedUseCases">
-      <a href="#ID11"></a>
-    </p>
-  </section>
-  
-  <section class="requirement" id="RID17">
-    <h3>Dataset citation [RDSC]</h3>
-    <p>Provide a way to specify information required for data citation (e.g., dataset authors, title, publication year, publisher, persistent identifier)</p>
-	<p class="relatedRequirements">
-      <a href="#RID6"></a>
-    </p> 
-    <p class="relatedUseCases">
-      <a href="#ID10"></a>
-    </p>
-  </section>
-
-   <section class="requirement" id="RID15">
-    <h3>Dataset publications [RDSP]</h3>
-    <p>Provide a way to link publications about a dataset to the dataset.</p>
-	<p class="relatedRequirements">
-      <a href="#RID3"></a>
-      <a href="#RID11"></a>
-      <a href="#RID15"></a>
-    </p> 
-    <p class="relatedUseCases">
-      <a href="#ID9"></a>
-    </p>
-  </section>
-
-   <section class="requirement" id="RID25.2">
-    <h3>Publication source [RPS]</h3>
-    <p>Provide a way to cite the original metadata with a dereferenceable identifier.
-	</p>
-    <p class="relatedUseCases">
-      <a href="#ID25"></a>
-    </p>
-    <p class="relatedRequirements">
-      <a href="#RID25.1"></a>	
-	</p> 
-  </section>
-
-  <section class="requirement" id="RID25.1">
-    <h3>Publication control [RPC]</h3>
-    <p>Provide means to express rights relating to reuse of DCAT metadata</p>
-    <p class="relatedUseCases">
-      <a href="#ID25"></a>
-    </p>
-    <p class="relatedRequirements">
-      <a href="#RID25.2"></a>	
-	</p> 
-  </section>
-
-  <section class="requirement" id="RID19">
-   <h3>Dataset access [RDSA]</h3>
-   <p>Provide a way to specify access restrictions for both a dataset and a distribution.</p>
-   <p>Provide a way to define the meaning of the access restrictions for a dataset or distribution and to specify what is required to access a dataset and distribution.</p>
-   <p class="relatedUseCases">
-      <a href="#ID17"></a>
-    </p>
-  </section>
-  
-
-</section>
 
 <section id="AlignmentRequirements">
 <h2>Alignment</h2>
-	
+
 	Alignment - how DCAT relates to other vocabularies.
- 
+
   <section class="requirement" id="RID36.1">
     <h3>Related vocabularies comparision [RVC]</h3>
     <p>Analyse and compare similar concepts defined by vocabularies related to DCAT (e.g. VOID, Data Cube dataset).</p>
@@ -3258,7 +3344,7 @@ Aspects of identification and control over copies.
       <a href="#ID36"></a>
     </p>
   </section>
- 
+
   <section class="requirement" id="RID40.1">
     <h3>Entailment of schema.org [RES]</h3>
     <p>Define schema.org equivalents for DCAT properties to support entailment of schema.org compliant profiles of DCAT records.</p>
@@ -3268,53 +3354,7 @@ Aspects of identification and control over copies.
   </section>
 </section>
 
-<section id="RelationshipRequirements">
 
-<h2>Relationships</h2>
-
- How identified objects relate to each other.
- 
-  <section class="requirement" id="RID20">
-    <h3>Related datasets [RRDS]</h3>
-    <p>Ability to represent the different relationships between datasets, including: versions of a dataset, collection of datasets, to describe their inclusion criteria and to define the 'hasPart'/'partOf' relationship, derivation, e.g. processed data that is derived from raw data  </p>
-    <p class="note">this requriement to be rolled in here: Update method of Dataset: 
-    Indicate the update method of a Dataset description, e.g. whether each new dataset entirely supercedes previous ones (is stand-alone), or whether there is a base dataset with files that effect updates to that base. 
-	</p>
-    <p class="relatedUseCases">
-      <a href="#ID47"></a>
-    </p>
-	<p class="relatedRequirements">
-      <a href="#RID8"></a>
-	  <a href="#RID16"></a>
-	  </p> 
-	 <p class="relatedUseCases">
-      <a href="#ID32"></a>
-    </p>
-  </section>
- 
-  <section class="requirement" id="RID49.2">
-    <h3>Project relation [RPR]</h3>
-    <p>Provide a means to indicate the relation of Datasets to a project.</p>
-    <p class="relatedUseCases">
-      <a href="#ID49"></a>
-    </p>
-    <p class="relatedRequirements">
-	   <a href="#ID49.1"></a>
-	</p>
-  </section>
-  
-  <section class="requirement" id="RID35.1">
-    <h3>Datasets vs. Catalog relation [RDSCR]</h3>
-    <p>Clarify the relationships between Datasets and zero, one or multiple Catalogs,
-    e.g. in scenarios of copying, harvesting and aggregation of Dataset descriptions
-    among Catalogs.</p>
-    <p class="relatedUseCases">
-      <a href="#ID35"></a>
-    </p>
-  </section>
- 
- 
-</section>
 
 <section id="MetaRequirements">
  <h2>Meta-level and methodology</h2>
@@ -3335,7 +3375,7 @@ Aspects of identification and control over copies.
       <a href="#ID19"></a>
     </p>
  </section>
-  
+
  <section class="requirement" id="RID19.2">
     <h3>Mapping of qualified and non-qualified forms [RQFM]</h3>
     <p>Specify mapping of qualified to non-qualified forms (lowering mapping). The reverse requires information (qualification) that might not be present/evident.</p>
@@ -3349,9 +3389,9 @@ Aspects of identification and control over copies.
 <!--<section id="UnclassifiedRequirements">
 <h2>unclassified - to be reviewed and moved </h2>
 -->
- 
-  
-<!-- rejected 
+
+
+<!-- rejected
   <section class="requirement" id="RID26.2">
     <h3>Vocabulary extension points</h3>
     <p>Define extension points (e.g. properties) for integration of external, specialized vocabularies.</p>
@@ -3362,7 +3402,7 @@ Aspects of identification and control over copies.
 -->
 
 
-<!-- rejected 
+<!-- rejected
   <section class="requirement" id="RID44.1">
     <h3>Serialized Dataset identifier</h3>
     <p>Define a means to identify a serialized DCAT Data(sub)set (i.e. a particular Distribution of a Dataset or its subset).</p>
@@ -3370,9 +3410,9 @@ Aspects of identification and control over copies.
       <a href="#ID44"></a>
     </p>
   </section>
--->   
+-->
 
-<!-- now in - was Link Related Datasets 
+<!-- now in - was Link Related Datasets
   <section class="requirement" id="RID47.1">
     <h3>Update method of Dataset</h3>
     <p>Indicate the update method of a Dataset description, e.g. whether each new dataset entirely supercedes previous ones (is stand-alone), or whether there is a base dataset with files that effect updates to that base. </p>
@@ -3393,8 +3433,7 @@ Aspects of identification and control over copies.
   </section> -->
 </section>
 
-</section>
-	<script class="remove" src="dxwg.js"> </script> 
+	<script class="remove" src="dxwg.js"> </script>
 	<script class="remove" src="config.js"> </script>
 	<script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c-common"> </script>
   </body>
