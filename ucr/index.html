@@ -2711,6 +2711,117 @@ for the same resource (i.e. the same access/download target).</p>
 		  -->
 		  </p>
 		</section>
+
+
+
+<section id="ID49" class="usecase">
+		  <h2>Dataset business context [ID49]</h2>
+		  <p class="contributor">Peter Brenton, Simon Cox (CSIRO)</p>
+		  <p class="tags">
+			<span class="tag class_dcat">dcat</span>
+			<span class="tag class_documentation">documentation</span>
+			<span class="tag class_status">status</span>
+			<span class="tag class_version">version</span>
+			<span class="tag class_profile">profile</span>
+			<span class="tag class_provenance">provenance</span>
+			<span class="tag class_roles">roles</span>
+			<span class="tag class_semantics">semantics</span>
+			<span class="tag class_service">service</span>
+			<span class="tag class_usage_control">usage control</span>
+		  </p>
+		  <p class="stakeholders">
+			<p>data consumer, data producer, data publisher</p>
+		  </p>
+		  <div class="expandOrCollapse" onclick="toggleVisibility(this)">&#x25B6; Full use case description (click to collapse):</div>
+		  <div class="visible">
+			<p class="description">
+			  <p>
+				It is helpful and often essential to know the business context in which one or more datasets are created and managed, in particular concerning the project, program, initiative through which the dataset was generated. These are typically associated with funding or policy.
+			  </p>
+			  <p>
+				The business context links associated entities participating in a project. Projects can be an umbrella or unifying entity for one or many datasets which share the same project context.
+			  </p>
+			  <p>
+				DCAT or users of DCAT have often used externally defined classes for associated concepts from FOAF and W3C Organization ontology, but there is not currently any slot or guidance about how to relate a dataset to its business context. However, there is no general agreement on a class for 'Project'. The class might includes spatial, temporal, social, descriptive and financial information. There are a number of discipline or domain specific Project classes (see Links below), but there does not appear to be anything available which is sufficiently expressive and generic.
+			  </p>
+			  <p>As part of the DXWG there might be an opportunity to define a basic ontology for projects and related concepts. This should have a tight scope and few dependencies, similar to the approach used in <a rel="nofollow" class="external text" href="https://www.w3.org/TR/vocab-org/">W3C Organization ontology</a>.</p>
+			</p>
+
+		    <p class="existing_approaches">
+			 <a rel="nofollow" class="external text" href="http://vivoweb.org/ontology/core#Project">VIVO Project</a>
+		    </p>
+			<p class="links">
+			  <ul>
+				<li> <a rel="nofollow" class="external text" href="http://dbpedia.org/ontology/Project">dbPedia Ontology <i>Project</i></a>
+				</li>
+				<li> <a rel="nofollow" class="external text" href="http://xmlns.com/foaf/spec/#term_Project">FOAF Project</a>
+				</li>
+				<li> <a rel="nofollow" class="external text" href="http://vivoweb.org/ontology/core#Project">VIVO Project</a>
+				</li>
+				<li> <a rel="nofollow" class="external text" href="https://www.wilsoncenter.org/article/ppsr-core-metadata-standards">PPSR Core</a>
+				</li>
+			 </ul>
+			</p>
+		  </div>
+		  <p class="relatedUseCases">
+			<a href="#ID9"></a>
+			<a href="#ID10"></a>
+			<a href="#ID12"></a>
+			<a href="#ID13"></a>
+			<a href="#ID31"></a>
+		  </p>
+		  <p class="relatedRequirements">
+			<!--<a href="#RPCX"></a>
+			<a href="#RPR"></a>-->
+		  </p>
+		 </section>
+
+	    <section id="ID51" class="usecase">
+		  <h2>Modeling relation to real world entities [ID51]</h2>
+		  <p class="contributor">Jaroslav Pullmann</p>
+		  <p class="tags">
+			<span class="tag class_dcat">dcat</span>
+			<span class="tag class_coverage">coverage</span>
+			<span class="tag class_referencing">referencing</span>
+			<span class="tag class_provenance">provenance</span>
+		  </p>
+		  <p class="stakeholders">
+			<p>data producer, data publisher, data consumers</p>
+		  </p>
+		  <div class="expandOrCollapse" onclick="toggleVisibility(this)">&#x25B6; Full use case description (click to collapse):</div>
+		  <div class="visible">
+			<p class="description">
+			  <p>
+				Next to temporal and spatial dimensions of Dataset's content its relation to significant real world entities
+				should be captured as well. Examples are traffic data related to a particular highway, polution statistics of
+				a river, or the energy consumption records of an assembly line. 
+			  </p>
+              <p>
+				The reference to any identified real world entity provides the necessary context for an interpretation of the
+				Datatset's topic (e.g. traffic data, water polution, energy consumption). 
+			</p>
+			<p class="existing_approaches">
+			  <p>Relation to SSN and other sensor ontologies, TBD..</p>
+			</p>
+			<p class="links">
+			  <ul>
+				<li></li>
+			  </ul>
+			</p>
+			</p>
+		  </div>
+		  <p class="relatedUseCases">
+			<a href="#ID27"></a>
+			<a href="#ID29"></a>
+		  </p>
+		  <p class="relatedRequirements">
+		  <!--
+			<a href="#RID5"></a>
+		  -->
+		  </p>
+		</section>
+
+		
     </section>
 
 <!--
