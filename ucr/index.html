@@ -2792,20 +2792,25 @@ for the same resource (i.e. the same access/download target).</p>
 		  <div class="visible">
 			<p class="description">
 			  <p>
-				Next to temporal and spatial dimensions of Dataset's content its relation to significant real world entities
-				should be captured as well. Examples are traffic data related to a particular highway, polution statistics of
-				a river, or the energy consumption records of an assembly line. 
-			  </p>
-              <p>
-				The reference to any identified real world entity provides the necessary context for an interpretation of the
-				Datatset's topic (e.g. traffic data, water polution, energy consumption). 
+				Next to temporal (<a href="https://www.w3.org/TR/vocab-dcat/#Property:dataset_temporal">dct:temporal</a>) and
+				spatial (<a href="https://www.w3.org/TR/vocab-dcat/#Property:dataset_spatial">dct:spatial</a>) dimensions of
+				Dataset's content its relation to significant real world entities should be captured as well.			  
+				Examples are traffic data related to a particular highway, polution statistics of a river,
+				or the energy consumption records of an assembly line.
+			    Reference to the monitored entity is a prerequisite for searching and identifying relevant (statistical) Datasets.
+				It provides an essential context for the interpretation of Datatset's theme (<a href="https://www.w3.org/TR/vocab-dcat/#Property:dataset_theme">dcat:theme</a>),
+				such as "traffic data", "water polution", or "energy consumption".
 			</p>
 			<p class="existing_approaches">
-			  <p>Relation to SSN and other sensor ontologies, TBD..</p>
+			  <p>The Semantic Sensor Network Ontology [[vocab-ssn]] refers to a real world entity that is subject of an Observation
+			  or Actuation as <a href="https://www.w3.org/TR/vocab-ssn/#SOSAFeatureOfInterest">Feature of interest</a>. The process
+			  of sensing or controlling a feature's <a href="https://www.w3.org/TR/vocab-ssn/#SOSAObservableProperty">Observable Property</a>
+			  generates a series of Data <a href="https://www.w3.org/TR/vocab-ssn/#SOSAResult">Results</a>
+			  whose interpretation closely links to the identification of underyling entity.
 			</p>
 			<p class="links">
 			  <ul>
-				<li></li>
+				<li><a href="https://www.w3.org/TR/vocab-ssn/#SOSAFeatureOfInterest">SSN Feature of interest</a></li>
 			  </ul>
 			</p>
 			</p>
@@ -3143,6 +3148,15 @@ for the same resource (i.e. the same access/download target).</p>
       <a href="#ID27"></a>
     </p>
   </section>
+
+  <section class="requirement" id="RRWE">
+    <h3>Relation to real world entities [RRWE]</h3>
+    <p>Allow for linking to or otherwise specifying real world entities, whose observation, evaluation, or control lead to the resultant Dataset.</p>
+    <p class="relatedUseCases">
+      <a href="#ID51"></a>
+    </p>
+  </section>
+  
 </section>
 
 <section id="DistribitionRequirements">
